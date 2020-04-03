@@ -1,0 +1,49 @@
+<h6>Release Notes <small id="version"></small></h6>
+<span>정식 배포되지 않은 버전입니다.</span>
+<hr>
+
+<div class="row">
+    <div class="col-md mb-4">
+        <div class="card">
+            <div class="card-header text-white bg-primary">
+                New
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Delete Certificate 버튼 추가</li>
+                <li class="list-group-item">SignGATE EWS 버전의 Sign Detached Message 기능 추가</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md mb-4">
+        <div class="card">
+            <div class="card-header text-white bg-info">
+                Improved
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">-</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md mb-4">
+        <div class="card">
+            <div class="card-header text-white bg-warning">
+                Fix
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">CSS Class 중복 수정 (d-none -> kica-d-none)</li>
+                <li class="list-group-item">PFX 가져오기 시 내부 인증서 암호 초기화 안되던 오류 수정</li>
+                <li class="list-group-item">에러 메시지 출력 안되던 오류 수정</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    (function () {
+        var urls = location.href.split("/");
+        $('#version').html(urls[urls.length - 2]);
+    })();
+</script>

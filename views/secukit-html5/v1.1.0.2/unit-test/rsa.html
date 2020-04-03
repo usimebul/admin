@@ -1,0 +1,74 @@
+<div class="card" id="card-electronic-signature">
+    <div class="card-header"><strong>RSA</strong></div>
+    <div class="card-body">
+        <label class="col-form-label" for="textarea-message">Message <small>(Source for signing)</small></label>
+        <textarea class="form-control form-control-sm" id="textarea-message" name="textarea-message"
+            rows="1">특수문자: !@#$%^&*()_+{}|숫자: 1234567890한글: 하나에  가슴속에 새겨지는 그리고 피어나듯이 내린 봅니다. 영어: Lorem ipsum dolor sit amet, consectetur</textarea>
+
+        <h6 class="mt-4">RSA Options</h6>
+        
+
+        <!-- row -->
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="select-padding-algorithm">Padding Algorithm</label>
+                    <div class="col-sm-8">
+                        <select class="form-control form-control-sm" id="select-padding-algorithm" name="select-padding-algorithm"
+                            size="1">
+                            <option value="RSAES-OAEP">RSAES-OAEP</option>
+                            <option selected value="RSAES-PKCS1-V1_5">RSAES-PKCS1-V1_5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="select-encoding">Encoding</label>
+                    <div class="col-sm-8">
+                        <select class="form-control form-control-sm" id="select-encoding" name="select-encoding" size="1">
+                            <option selected value="base64"> BASE64</option>
+                            <option value="hex">HEX</option>
+                            <option value="pem">PEM</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row-->
+
+        <label for="textarea-public-key">Public Key <small>(Server Certificate)</small></label>
+        <textarea class="form-control form-control-sm" id="textarea-public-key" name="textarea-public-key"
+            rows="4">-----BEGIN CERTIFICATE-----MIIFbTCCBFWgAwIBAgIEBOAzezANBgkqhkiG9w0BAQsFADBKMQswCQYDVQQGEwJLUjENMAsGA1UECgwES0lDQTEVMBMGA1UECwwMQWNjcmVkaXRlZENBMRUwEwYDVQQDDAxzaWduR0FURSBDQTUwHhcNMTkwNzA4MDY0NTAwWhcNMjAwNzA4MTQ1OTU5WjCBkjELMAkGA1UEBhMCS1IxDTALBgNVBAoMBEtJQ0ExEzARBgNVBAsMCmxpY2Vuc2VkQ0ExFTATBgNVBAsMDOuTseuhneq4sOq0gDEZMBcGA1UECwwQS0lDQeqzoOqwneyEvO2EsDERMA8GA1UECwwI7IS87YSwUkExGjAYBgNVBAMMEe2VnOygleyduCjqsJzsnbgpMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjHTwG4ivPqan9UKPfEm29mAd4yozXYRVOI/BLKf/lKDgoelwjAqlpzhj3SVwKAhlUTuKflBY9DYUjLvDy9qGwTTO4sWPZgynyNJ3u2QGWdRCWTHSbVRkFvCJtlrvtXjhiPvcGpLBc6hZQRJRV+SrQzN22SaKT9P3zIaw8hOQbN/jbieZzLVcVWUZT8pO/5a59k/VGTQIQOoj5Q+Ab9/jA49BLkTJWfVU1Kq1NFshRUsFMi3FFwzRCUfoFOlMBPDjOxQ078X+jlREPBqeZ0Lz3BQUhnD6EWEoa+saUigp/sLm5zuawqMnU7PNgAhzZKJtIvbfHN0V8UeP7h+7BFByPQIDAQABo4ICEDCCAgwwgY8GA1UdIwSBhzCBhIAU2L467EWZxZ7jnOqBH9IdErA2PoihaKRmMGQxCzAJBgNVBAYTAktSMQ0wCwYDVQQKDARLSVNBMS4wLAYDVQQLDCVLb3JlYSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSBDZW50cmFsMRYwFAYDVQQDDA1LSVNBIFJvb3RDQSA0ggIQHTAdBgNVHQ4EFgQUZP5K2MhZ2EOlHY4vLfM2cY6ERV0wDgYDVR0PAQH/BAQDAgUgMBcGA1UdIAQQMA4wDAYKKoMajJpEBQIBAjCBiAYDVR0RBIGAMH6BFXB1cmUyNzEzQHNpZ25nYXRlLmNvbaBlBgkqgxqMmkQKAQGgWDBWDBHtlZzsoJXsnbgo6rCc7J24KTBBMD8GCiqDGoyaRAoBAQEwMTALBglghkgBZQMEAgGgIgQgiCsFhWxpPQRHOfXZqOnOtMJ2BDiQ3iw8ea+lOZQN3z0wXwYDVR0fBFgwVjBUoFKgUIZObGRhcDovL2xkYXAuc2lnbmdhdGUuY29tOjM4OS9vdT1kcDdwMTQ4MDMsb3U9Y3JsZHAsb3U9QWNjcmVkaXRlZENBLG89S0lDQSxjPUtSMEQGCCsGAQUFBwEBBDgwNjA0BggrBgEFBQcwAYYoaHR0cDovL29jc3Auc2lnbmdhdGUuY29tOjkwMjAvT0NTUFNlcnZlcjANBgkqhkiG9w0BAQsFAAOCAQEAXB7becgNCzhBSXHM07XkyOAO2k258wwqZra8CddkpXLnPVyb4OupAgHhR3YiRGFSUqRtttPHUwwAqmPfToCj3HFYS3wEan2L4kLLPq00sOTlHgOVR6KBQ1N8dM1w3atyAH5ezGlcUYWP2CUMQZVPZ+RPgcfEdcX0xoYeOhWw05/Cr1b2hLcG0wLssEruJG3+1dHc4jO7rnucIPANHcSup11vne1KcPmFrMCSzLUAu5PItc/vj+Bppu/mof6llMPpuOx1urGRlOI3Bq+ZRCX0PEDx77kCbnHhp6BTzoOTU0R31umDTxVpYSjybploHbPT2WoXEhhIpvAVH9v6lIj71A==-----END CERTIFICATE-----</textarea>
+
+        
+        <button class="btn btn-sm btn-pill btn-block btn-primary mt-4" id="button-encrypt" type="button">Encrypt</button>
+
+
+        <h6 class="mt-4">Result</h6>
+        
+        <textarea class="form-control form-control-sm" id="textarea-result" name="textarea-result" rows="6"></textarea>
+        
+    </div>
+</div>
+
+<script>
+    $('#button-encrypt').click(function () {
+        $('#textarea-result').val("");
+
+        var key = $('#textarea-public-key').val();
+        var paddingAlg = $('#select-padding-algorithm').val();
+        var message = $('#textarea-message').val();
+        var encoding =  $('#select-encoding').val();
+
+        try {
+            var result = html5Api.rsaEncrypt(key, message, paddingAlg, encoding);
+        } catch (e) {
+            var result = e.message;
+        }
+
+
+        $('#textarea-result').val(result);
+    });
+</script>

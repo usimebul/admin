@@ -1,0 +1,350 @@
+<div class="card" id="card-electronic-signature">
+    <div class="card-header"><strong>Electornic Siganture</strong> <small>without Verification</small></div>
+    <div class="card-body">
+        <div class="row">
+            <!-- Generate Signature -->
+            <div class="col-md border-right">
+                <h6>Message <small>(Source for signing)</small></h6>
+                <textarea class="form-control form-control-sm" id="textarea-message" name="textarea-message"
+                    rows="4">특수문자: !@#$%^&*()_+{}|숫자: 1234567890한글: 하나에  가슴속에 새겨지는 그리고 피어나듯이 내린 봅니다. 영어: Lorem ipsum dolor sit amet, consectetur</textarea>
+                <h6 class="mt-4">Signature Options</h6>
+                
+                <!-- row -->
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label" for="select-signature-type">Signature Type</label>
+                            <div class="col-sm-8">
+                                <select class="form-control form-control-sm" id="select-signature-type"
+                                    name="select-signature-type" size="1">
+                                    <option value="generateSignatureData">generateSignatureData</option>
+                                    <option value="generateSignatureFile">generateSignatureFile</option>
+                                    <option value="generatePKCS7SignedData">generatePKCS7SignedData</option>
+                                    <option value="generatePKCS7SignedFile">generatePKCS7SignedFile</option>
+                                    <option value="generatePKCS7SignedFileToData">generatePKCS7SignedFileToData</option>
+                                    <option value="generatePKCS7EnvelopedData">generatePKCS7EnvelopedData</option>
+                                    <option value="generatePKCS7EnvelopedFile">generatePKCS7EnvelopedFile</option>
+                                    <option value="generatePKCS7EnvelopedFileToData">generatePKCS7EnvelopedFileToData
+                                    </option>
+                                    <option value="generatePKCS7SignedAndEnvelopedData">
+                                        generatePKCS7SignedAndEnvelopedData
+                                    </option>
+                                    <option value="generatePKCS7SignedAndEnvelopedFile">
+                                        generatePKCS7SignedAndEnvelopedFile
+                                    </option>
+                                    <option value="generatePKCS7SignedAndEnvelopedFileToData">
+                                        generatePKCS7SignedAndEnvelopedFileToData</option>
+                                    <option value="addPKCS7SignedData">addPKCS7SignedData</option>
+                                    <option value="addPKCS7SignedFile">addPKCS7SignedFile</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label" for="select-cert-type">Certificate Type</label>
+                            <div class="col-sm-8">
+                                <select class="form-control form-control-sm" id="select-cert-type"
+                                    name="select-cert-type" size="1">
+                                    <option selected value="SignCert">SignCert</option>
+                                    <option value="EncryptCert">EncryptCert</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row-->
+
+                <!-- row -->
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label" for="select-digest-algorithm">Diegset
+                                Algorithm</label>
+                            <div class="col-sm-8">
+                                <select class="form-control form-control-sm" id="select-digest-algorithm"
+                                    name="select-digest-algorithm" size="1">
+                                    <option value="SHA1">SHA1</option>
+                                    <option selected value="SHA256">SHA256</option>
+                                    <option value="SHA384">SHA384</option>
+                                    <option value="SHA512">SHA512</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label" for="text-cert-id">Cert ID</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control form-control-sm" id="text-cert-id"
+                                    value="Tester">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row-->
+
+                <!-- row -->
+                <div class="row">
+                    <div class="col-sm-6 d-none" id="file-path-wrapper">
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label" for="text-file-path">File Path</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control form-control-sm" id="text-file-path"
+                                    value="S:/SecuKitNXS/test.txt">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6  d-none" id="out-file-path-wrapper">
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label" for="text-out-file-path">Out File Path</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control form-control-sm" id="text-out-file-path"
+                                    value="S:/SecuKitNXS/test[signed].txt">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /row -->
+
+                <div class="d-none" id="envelop-cert">
+                    <label for="textarea-server-cert">RSA Public Key <small>(한정인(개인) signCert.der)</small></label>
+                    <textarea class="form-control form-control-sm" id="textarea-server-cert" name="textarea-server-cert"
+                        rows="4">-----BEGIN CERTIFICATE-----MIIFyzCCBLOgAwIBAgIEBOAzejANBgkqhkiG9w0BAQsFADBKMQswCQYDVQQGEwJLUjENMAsGA1UECgwES0lDQTEVMBMGA1UECwwMQWNjcmVkaXRlZENBMRUwEwYDVQQDDAxzaWduR0FURSBDQTUwHhcNMTkwNzA4MDY0NTAwWhcNMjAwNzA4MTQ1OTU5WjCBkjELMAkGA1UEBhMCS1IxDTALBgNVBAoMBEtJQ0ExEzARBgNVBAsMCmxpY2Vuc2VkQ0ExFTATBgNVBAsMDOuTseuhneq4sOq0gDEZMBcGA1UECwwQS0lDQeqzoOqwneyEvO2EsDERMA8GA1UECwwI7IS87YSwUkExGjAYBgNVBAMMEe2VnOygleyduCjqsJzsnbgpMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiszgCtp4M43q6Ptq4cYoB/jqsY3EXt/LPQGcQzOT4/9nDnLtFoShADNx8i2nUZGCy4dOSexuhDeX0NwTffMK3kNQBc9SkQ5ye/ro8Gzc+v2eI+sGFH4oo/KgG+PIUjG9H5GYsY6de+TEg9+zMmhkeHDAh8I8jc0QTW9btBKxWOgSAF5JBsuL1fPdIUKskoSYH4OY8gu/6yTNMG16qoMJxzW+y2bKvx5jq1Qqf+cHGx1M5vw147BGuHJhLapgI+LoWX04hI6ysPFiyzO9IXuxonpKX3m7oKJMF5Ht2hXEvAl9O6WiUqZDfxpCPPpb8Egnp63CvZOQ/d+8wq4Jy2WZ5QIDAQABo4ICbjCCAmowgY8GA1UdIwSBhzCBhIAU2L467EWZxZ7jnOqBH9IdErA2PoihaKRmMGQxCzAJBgNVBAYTAktSMQ0wCwYDVQQKDARLSVNBMS4wLAYDVQQLDCVLb3JlYSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSBDZW50cmFsMRYwFAYDVQQDDA1LSVNBIFJvb3RDQSA0ggIQHTAdBgNVHQ4EFgQUOJKmGzgbahSwjUQWtdVn8Lcmu00wDgYDVR0PAQH/BAQDAgbAMHUGA1UdIARuMGwwagYKKoMajJpEBQIBAjBcMCwGCCsGAQUFBwIBFiBodHRwOi8vd3d3LnNpZ25nYXRlLmNvbS9jcHMuaHRtbDAsBggrBgEFBQcCAjAgHh7HdAAgx3jJncEcspQAIKz1x3jHeMmdwRzHhbLIsuQwgYgGA1UdEQSBgDB+gRVwdXJlMjcxM0BzaWduZ2F0ZS5jb22gZQYJKoMajJpECgEBoFgwVgwR7ZWc7KCV7J24KOqwnOyduCkwQTA/BgoqgxqMmkQKAQEBMDEwCwYJYIZIAWUDBAIBoCIEIIgrBYVsaT0ERzn12ajpzrTCdgQ4kN4sPHmvpTmUDd89MF8GA1UdHwRYMFYwVKBSoFCGTmxkYXA6Ly9sZGFwLnNpZ25nYXRlLmNvbTozODkvb3U9ZHA3cDE0ODAzLG91PWNybGRwLG91PUFjY3JlZGl0ZWRDQSxvPUtJQ0EsYz1LUjBEBggrBgEFBQcBAQQ4MDYwNAYIKwYBBQUHMAGGKGh0dHA6Ly9vY3NwLnNpZ25nYXRlLmNvbTo5MDIwL09DU1BTZXJ2ZXIwDQYJKoZIhvcNAQELBQADggEBAKKJVYn61+9l/+cAbY12mmLTBRPkBjtIGuCEESIncjgRFBSYCj/fDiACNoj9NpOeuzxqsXZvEXnt8mXsNT5Eg5ZnwWCDLNn4DFfmL0ShETRTeZiIG2taAhAZVxhSAlvRp+fJISnGQgvXqZht2aptoLAxsAcVkp52kHTNN/VAZKwsrbycIMUarG6GIXilzmo7PZ4ljw0cujQteHAk41UflKCh9SrKU5hCqK/d1ndk3fujih4AC3pwYyulWPy3r+UumVXeMxHerj7wgS83XkzxDtlNbE+Z4A1+MiqYC9SPXv6T1EscaCMd+DY/SlF+6CD//2V8YixISzBRy6KB3anGSAg=-----END CERTIFICATE-----</textarea>
+                </div>
+                
+                <button class="btn btn-sm btn-pill btn-block btn-primary" id="button-sign" type="button">Sign</button>
+
+                <h6 class="mt-4">Result</h6>
+                
+                <textarea class="form-control form-control-sm" id="textarea-sign-result" name="textarea-sign-result"
+                    rows="6"></textarea>
+            </div>
+            <!-- /Generate Signature -->
+
+            <!-- Verify Signature -->
+            <div class="col-md">
+                <h6>Signature Message <small>(Generated Signature Message)</small></h6>
+                <textarea class="form-control form-control-sm" id="textarea-signature-message"
+                    name="textarea-signature-message" rows="4"></textarea>
+                <h6 class="mt-4">Verification Options</h6>
+                
+                <!-- row -->
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label" for="select-verify-signature-type">Signature
+                                Type</label>
+                            <div class="col-sm-8">
+                                <select class="form-control form-control-sm" id="select-verify-signature-type"
+                                    name="select-verify-signature-type" size="1">
+                                    <option value="verifySignatureData">verifySignatureData</option>
+                                    <option value="verifySignatureFile">verifySignatureFile</option>
+                                    <option value="verifyPKCS7SignedData">verifyPKCS7SignedData</option>
+                                    <option value="verifyPKCS7SignedFile">verifyPKCS7SignedFile</option>
+                                    <option value="verifyPKCS7EnvelopedData">verifyPKCS7EnvelopedData</option>
+                                    <option value="verifyPKCS7EnvelopedFile">verifyPKCS7EnvelopedFile</option>
+                                    <option value="verifyPKCS7SignedAndEnvelopedData2">
+                                        verifyPKCS7SignedAndEnvelopedData2</option>
+                                    <option value="verifyPKCS7SignedAndEnvelopedFile2">
+                                        verifyPKCS7SignedAndEnvelopedFile2</option>
+
+                                    <option value="extractCertCountFromMultiPKCS7SignedData">
+                                        extractCertCountFromMultiPKCS7SignedData</option>
+                                    <option value="extractCertificatesFromMultiPKCS7SignedData">
+                                        extractCertificatesFromMultiPKCS7SignedData</option>
+                                    <option value="extractTimeValuesFromMultiPKCS7SignedData">
+                                        extractTimeValuesFromMultiPKCS7SignedData</option>
+                                    <option value="extractOriginalDataFromMultiPKCS7SignedData">
+                                        extractOriginalDataFromMultiPKCS7SignedData</option>
+
+                                    <option value="extractCertCountFromMultiPKCS7SignedFile">
+                                        extractCertCountFromMultiPKCS7SignedFile</option>
+                                    <option value="extractCertificatesFromMultiPKCS7SignedFile">
+                                        extractCertificatesFromMultiPKCS7SignedFile</option>
+                                    <option value="extractTimeValuesFromMultiPKCS7SignedFile">
+                                        extractTimeValuesFromMultiPKCS7SignedFile</option>
+                                    <option value="extractOriginalDataFromMultiPKCS7SignedFile">
+                                        extractOriginalDataFromMultiPKCS7SignedFile</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label" for="select-verify-cert-type">Certificate
+                                Type</label>
+                            <div class="col-sm-8">
+                                <select class="form-control form-control-sm" id="select-verify-cert-type"
+                                    name="select-verify-cert-type" size="1">
+                                    <option selected value="SignCert">SignCert</option>
+                                    <option value="EncryptCert">EncryptCert</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- row -->
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label" for="select-verify-digest-algorithm">Diegset
+                                Algorithm</label>
+                            <div class="col-sm-8">
+                                <select class="form-control form-control-sm" id="select-verify-digest-algorithm"
+                                    name="select-verify-digest-algorithm" size="1">
+                                    <option value="SHA1">SHA1</option>
+                                    <option selected value="SHA256">SHA256</option>
+                                    <option value="SHA384">SHA384</option>
+                                    <option value="SHA512">SHA512</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 d-none" id="verify-file-path-wrapper">
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label" for="text-verify-file-path">Out File Path</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control form-control-sm" id="text-verify-file-path"
+                                    value="S:/SecuKitNXS/test[signed].txt">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row-->
+                
+                <button class="btn btn-sm btn-pill btn-block btn-primary" id="button-verify" type="button">Verify</button>
+                <h6 class="mt-4">Result</h6>
+                
+                <textarea class="form-control form-control-sm" id="textarea-verify-result" name="textarea-verify-result"
+                    rows="6"></textarea>
+            </div>
+            <!-- /Verify Signature -->
+        </div>
+    </div>
+
+    <script>
+        var signatureMethod;
+        var verifysignatureMethod;
+        $('#select-signature-type').change(function () {
+            signatureMethod = $(this).val();
+            $('#envelop-cert, #file-path-wrapper, #out-file-path-wrapper').addClass('d-none');
+
+            if (signatureMethod.indexOf("File") > 0)
+                $('#file-path-wrapper, #out-file-path-wrapper').removeClass('d-none');
+
+            if (signatureMethod.indexOf("FileToData") > 0)
+                $('#out-file-path-wrapper').addClass('d-none');
+
+            if (signatureMethod.indexOf("Enveloped") > 0)
+                $('#envelop-cert').removeClass('d-none');
+        });
+
+
+        $('#select-verify-signature-type').change(function () {
+            verifysignatureMethod = $(this).val();
+            $('#envelop-key, #verify-file-path-wrapper').addClass('d-none');
+
+            if (verifysignatureMethod.indexOf("File") > 0)
+                $('#verify-file-path-wrapper').removeClass('d-none');
+
+        });
+
+
+        $('#button-sign').on('click', function () {
+            processLogic.init();
+            processLogic.setProcessLogic('sign');
+
+            NX_ShowDialog();
+        });
+
+        $('#button-verify').on('click', function () {
+            processLogic.init();
+            processLogic.setProcessLogic('verify');
+
+            NX_ShowDialog();
+        });
+
+
+        function SecuKitNXS_RESULT(cmd, res) {
+            if (res.ERROR_CODE !== undefined) {
+                // Error Message 출력
+                $('.nx-cert-select').hide(); $('#nx-pki-ui-wrapper').hide(); KICA_Error.init();
+                KICA_Error.setError(res.ERROR_CODE, res.ERROR_MESSAGE);
+                var errorMsg = KICA_Error.getError();
+                alert(errorMsg);
+                return;
+            }
+
+            switch (cmd) {
+                case 'sign':
+                    signatureMethod = $("#select-signature-type").val();
+                    var message = removeCRLF(removePEMHeader($('#textarea-message').val()));
+                    var cmd = "signResult." + signatureMethod;
+                    var serverCert = removePEMHeader($('#textarea-server-cert').val());
+                    var param = JSON.stringify({
+                        'certType': $("#select-cert-type").val(),
+                        'certID': res,
+                        'sourceString': message,
+                        'pText': message,
+                        'algorithm': $('#select-digest-algorithm').val(),
+                        'kmServerCert': serverCert,
+                        'targetCert': serverCert,
+                        'sourceFilePath': $('#text-file-path').val(),
+                        'outFileName': $('#text-out-file-path').val()
+                    });
+                    secukitnxInterface.SecuKitNXS(cmd, param);
+                    break;
+
+                case 'signResult':
+                    var result = eval("res." + signatureMethod);
+                    $('#textarea-sign-result').val(result);
+                    $('#textarea-signature-message').val(removePEMHeader(removeCRLF(result)));
+                    break;
+
+                case 'verify':
+                    verifysignatureMethod = $('#select-verify-signature-type').val();
+                    var cmd = "verifyResult." + verifysignatureMethod;
+                    var signedMessage = $('#textarea-signature-message').val();
+                    var signedFile = $('#text-verify-file-path').val();
+                    var data = {
+                        'certType': $("#select-verify-cert-type").val(),
+                        'certID': res,
+                        'algorithm': $('#select-verify-digest-algorithm').val(),
+                        'order': "1"
+                    }
+
+                    if (verifysignatureMethod.indexOf('PKCS7Enveloped') > 0) {
+                        data.envelopedString = signedMessage;
+                        data.envelopedFilePath = signedFile;
+                    } else if (verifysignatureMethod.indexOf('SignedAndEnveloped') > 0) {
+                        data.signedAndEnvelopedString = signedMessage;
+                        data.signedAndEnvelopedFilePath = signedFile;
+                    } else if (verifysignatureMethod.indexOf('Signature') > 0) {
+                        data.signatureString = signedMessage;
+                        data.signatureFilePath = signedFile;
+                        data.sourceString = removeCRLF(removePEMHeader($('#textarea-message').val()));;
+                        data.sourceFilePath = $("#text-file-path").val();
+                    } else {
+                        data.signedString = signedMessage;
+                        data.signedFilePath = signedFile;
+                    }
+
+                    var param = JSON.stringify(data);
+
+                    secukitnxInterface.SecuKitNXS(cmd, param);
+
+                    break;
+
+                case 'verifyResult':
+                    console.log(res);
+                    var result = eval("res." + verifysignatureMethod);
+                    $('#textarea-verify-result').val(result);
+                    break;
+
+                default: break;
+            }
+        }
+
+    </script>
