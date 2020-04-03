@@ -697,7 +697,7 @@ var html5Api = {
 
         return webnpki.bin.encodeHex(arr)
     },
-    
+
     /**
      * Hexadecimal 문자열을 디코딩한다.
      * @param {String} str 디코딩할 문자열
@@ -848,16 +848,6 @@ var html5DialogApi = {
         KICA_DIALOG.openSelectCertificateDialog();
     },
 
-    deleteCertificate: function(callback) {
-        $('#select-certificate-confirm').on('click', function() {
-            html5Api.deleteCertificate(callback);
-        });
-
-        KICA_DIALOG.openSelectCertificateDialog();
-
-        _disableQlalfqjsghInput();
-    },
-
     getEncryptedPrivateKeyInfo: function(callback) {
         $('#select-certificate-confirm').on('click', function() {
             html5Api.getEncryptedPrivateKeyInfo(callback);
@@ -911,19 +901,20 @@ var KICA_MANAGEMENT_API = {
             return;
         }
 
-        // Todo 콜백함수 정의하기
-        // 콜백 함수 역할 = 성공, 실패 Alert()
-        // 성공 시 인증서 목록 갱신 
-        var callback = function(res, error){
-            if(error == undefined)
-            {   
-                KICA_DIALOG.openSelectCertificateDialog();
-            }
-             else
-                KICA_ALERT.error("DELETE_CERT_FAILED", KICA_ERROR_MSG.get("DELETE_CERT_FAILED")); //alert 에러 처리
-        };
-         
-        webnpki.deleteCertificate(certificate, callback);
+
+       KICA_ALERT.delcerAlert()
+       .then(function(result) {
+           //confirm
+           if(result.value){
+               webnpki.deleteCertificate(certificate)
+               .then(function(res, error) {
+                   if(error == undefined)
+                   KICA_DIALOG.openSelectCertificateDialog();
+                   else
+                   KICA_ALERT.error("DELETE_CERT_FAILED", KICA_ERROR_MSG.get("DELETE_CERT_FAILED"));
+               });
+           }
+       }); 
         
     },
 }
