@@ -10,7 +10,7 @@
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">로컬 서버 프로그램을 시작 프로그램에 등록</li>
-                <li class="list-group-item">클라이언트 설치 완료 시 로컬 서버 시작</li>                
+                <li class="list-group-item">클라이언트 설치 완료 시 로컬 서버 시작</li>
             </ul>
         </div>
     </div>
@@ -48,12 +48,31 @@
 
     function SecuKitNX_Ready(res) {
         if (res) {
-            $("#release-note").html("설치 모듈 버전 정보" +
-                "<ul>"+               
-                "<li> kpmcnt:" + SECUKITNX_CONST.pluginInfo[0].moduleInfo.exNxClient_kpmcnt_exe + "</li>" +
-                "<li> kpmsvc:" + SECUKITNX_CONST.pluginInfo[0].moduleInfo.exNxClient_kpmsvc_exe + "</li>" +
-                "<li> secukitNX_dll:" + SECUKITNX_CONST.pluginInfo[0].moduleInfo.exNxClient_secukitNX_dll + "</li>" +       
-                "</ul>");
+            var cmd = 'NXgetVersion.getVersion';
+            var Data = {
+                'version': 'NULL'
+            };
+            var param = JSON.stringify(Data);
+
+            secukitnxInterface.SecuKitNXS(cmd, param);
+        }
+    }
+
+    function SecuKitNXS_RESULT(cmd, res) {
+        if (res.ERROR_CODE !== undefined) {
+            // Error Message 출력
+            $('.nx-cert-select').hide(); $('#nx-pki-ui-wrapper').hide(); KICA_Error.init();
+            KICA_Error.setError(res.ERROR_CODE, res.ERROR_MESSAGE);
+            var errorMsg = KICA_Error.getError();
+            alert(errorMsg);
+            return;
+        }
+
+        switch (cmd) {
+            case "NXgetVersion":
+                $("#release-note").html("현재 설치된 버전: " + res.version[0] + "." + res.version[1] + "." + res.version[2] + "." + res.version[3]);
+                console.log(res);
+            default: break;
         }
     }
 </script>

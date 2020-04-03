@@ -88,7 +88,20 @@
     $(document).ready(function () {
       $('#KICA_SECUKITNXDIV_ID').append(KICA_SECUKITNXDIV);
       secunx_Loading();
-    })    
+    })
+
+    function download_nxs() {
+      const a = document.createElement("a");
+      a.style.display = "none";
+      document.body.appendChild(a);
+
+      a.href = NXClient_DownLoad_URL;
+      a.setAttribute("download", "SecuKitNXS.exe");
+      a.click();
+
+      window.URL.revokeObjectURL(a.href);
+      document.body.removeChild(a);
+    }
   </script>
   <!-- //KICA SecuKit NXS -->
 

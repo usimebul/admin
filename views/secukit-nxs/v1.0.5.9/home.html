@@ -1,0 +1,77 @@
+<h6>Release Notes <small id="version"></small></h6>
+<span id="release-note"></span>
+<hr>
+
+<div class="row">
+    <div class="col-md">
+        <div class="card">
+            <div class="card-header text-white bg-primary">
+                New
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">로컬 서버 프로그램을 시작 프로그램에 등록</li>
+                <li class="list-group-item">클라이언트 설치 완료 시 로컬 서버 시작</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md">
+        <div class="card">
+            <div class="card-header text-white bg-info">
+                Improved
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">설치 프로그램 실행 시 관리자 권한 요청</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md">
+        <div class="card">
+            <div class="card-header text-white bg-warning">
+                Fix
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">서비스 프로그램 중단 현상 수정</li>
+                <li class="list-group-item">로컬 서버 프로그램 SSL_Accept 응답 대기 현상 수정</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    (function () {
+        var urls = location.href.split("/");
+        $('#version').html(urls[urls.length - 2]);
+    })();
+
+    function SecuKitNX_Ready(res) {
+        if (res) {
+            var cmd = 'NXgetVersion.getVersion';
+            var Data = {
+                'version': 'NULL'
+            };
+            var param = JSON.stringify(Data);
+
+            secukitnxInterface.SecuKitNXS(cmd, param);
+        }
+    }
+
+    function SecuKitNXS_RESULT(cmd, res) {
+        if (res.ERROR_CODE !== undefined) {
+            // Error Message 출력
+            $('.nx-cert-select').hide(); $('#nx-pki-ui-wrapper').hide(); KICA_Error.init();
+            KICA_Error.setError(res.ERROR_CODE, res.ERROR_MESSAGE);
+            var errorMsg = KICA_Error.getError();
+            alert(errorMsg);
+            return;
+        }
+
+        switch (cmd) {
+            case "NXgetVersion":
+               console.log(res);
+            default: break;
+        }
+    }
+</script>

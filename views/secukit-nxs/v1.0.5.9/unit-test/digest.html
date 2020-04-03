@@ -1,0 +1,121 @@
+<div class="card" id="card-electronic-signature">
+    <div class="card-header"><strong>Electornic Siganture</strong> <small>without Verification</small></div>
+    <div class="card-body">
+        <h6>Message</h6>
+        <textarea class="form-control form-control-sm" id="textarea-message" name="textarea-message"
+            rows="1">특수문자: !@#$%^&*()_+{}|숫자: 1234567890한글: 하나에  가슴속에 새겨지는 그리고 피어나듯이 내린 봅니다. 영어: Lorem ipsum dolor sit amet, consectetur</textarea>
+
+        <h6 class="mt-4">Digest Options</h6>
+        <!-- row -->
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="select-function">Function</label>
+                    <div class="col-sm-8">
+                        <select class="form-control form-control-sm" id="select-function" size="1">
+                            <option value="generateHashValue">generateHashValue</option>
+                            <option value="generateHashFileToFile">generateHashFileToFile</option>
+                            <option value="generateHashFileToString">generateHashFileToString</option>
+                            <option value="generateMAC">generateMAC</option>
+                            <option value="generateMACFileToFile">generateMACFileToFile</option>
+                            <option value="generateMACFileToString">generateMACFileToString</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="select-digest-algorithm">Diegset Algorithm</label>
+                    <div class="col-sm-8">
+                        <select class="form-control form-control-sm" id="select-digest-algorithm"
+                            name="select-digest-algorithm" size="1">
+                            <option value="SHA1">SHA1</option>
+                            <option selected value="SHA256">SHA256</option>
+                            <option value="SHA384">SHA384</option>
+                            <option value="SHA512">SHA512</option>
+                            <option value="MD5">MD5</option>
+                            <option value="HAS160">HAS160</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row-->
+
+        <div class="row">
+            <div class="col-sm-6 d-none" id="file-path-wrapper">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="text-file-path">File Path</label>
+                    <div class="col-sm-8">
+                        <input tpye="text" class="form-control form-control-sm" id="text-file-path"
+                            value="S:/SecuKitNXS/test.txt">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 d-none" id="mac-key-wrapper">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="text-mac-key">Mac Key</label>
+                    <div class="col-sm-8">
+                        <input tpye="text" class="form-control form-control-sm" id="text-mac-key" value="signgate1!">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-sm btn-pill btn-block btn-primary" id="button-digest" type="button">Digest</button>
+
+        <h6 class="mt-4">Result</h6>
+
+        <textarea class="form-control form-control-sm" id="textarea-result" name="textarea-result" rows="6"></textarea>
+    </div>
+</div>
+
+<script>
+    var func;
+    $('#select-function').change(function () {
+        func = $(this).val();
+        $("#mac-key-wrapper, #file-path-wrapper").addClass('d-none');
+
+        if (func.indexOf("File") >= 0)
+            $("#file-path-wrapper").removeClass('d-none');
+
+        if (func.indexOf("MAC") >= 0)
+            $("#mac-key-wrapper").removeClass('d-none');
+    })
+
+    $('#button-digest').click(function () {
+        func = $('#select-function').val();
+        var cmd = "RESULT." + func;
+        var param = JSON.stringify({
+            'digestAlg': $("#select-digest-algorithm").val(),
+            'sourceFilePath': $("#text-file-path").val(),
+            'macKey': $("#text-mac-key").val(),
+            'srcData': $("#textarea-message").val()
+        });
+
+        secukitnxInterface.SecuKitNXS(cmd, param);
+    });
+
+    function SecuKitNXS_RESULT(cmd, res) {
+        if (res.ERROR_CODE !== undefined) {
+            // Error Message 출력
+            $('.nx-cert-select').hide(); $('#nx-pki-ui-wrapper').hide(); KICA_Error.init();
+            KICA_Error.setError(res.ERROR_CODE, res.ERROR_MESSAGE);
+            var errorMsg = KICA_Error.getError();
+            alert(errorMsg);
+            return;
+        }
+
+        switch (cmd) {
+            case 'RESULT':
+                var result = eval("res." + func);
+                $('#textarea-result').val(result);
+                break;
+
+            default: break;
+        }
+
+    }
+</script>
