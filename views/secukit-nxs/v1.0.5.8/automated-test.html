@@ -1,0 +1,660 @@
+<div class="row">
+    <!-- Messages -->
+    <div class="col-md-5 border-right">
+        <h6 class="d-block text-center mt-2 mb-4"><b>Messages</b></h6>
+
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label d-flex align-items-center" for="text-message">Message</label>
+            <div class="col-md-9">
+                <textarea class="form-control form-control-sm" id="text-message"
+                    rows="6">특수문자: !@#$%^&*()_+{}|숫자: 1234567890한글: 하나에  가슴속에 새겨지는 그리고 피어나듯이 내린 봅니다. 영어: Lorem ipsum dolor sit amet, consectetur</textarea>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label d-flex align-items-center" for="text-file-path">File Path</label>
+            <div class="col-md-9">
+                <input type="text" id="text-file-path" class="form-control form-control-sm" value="S:/SecuKitNXS/">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label d-flex align-items-center" for="text-file-name">File Name</label>
+            <div class="col-md-9">
+                <input type="text" id="text-file-name" class="form-control form-control-sm" value="test.txt">
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label d-flex align-items-center" for="text-idn">IDN</label>
+            <div class="col-md-9">
+                <input type="text" class="form-control form-control-sm" id="text-idn" value="1234561234563"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label d-flex align-items-center" for="text-signature-data">Signature
+                Data</label>
+            <div class="col-md-9">
+                <textarea class="form-control form-control-sm" id="text-signature-data" rows="6"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label d-flex align-items-center" for="text-p7-signed-data">P7 Signed
+                Data</label>
+            <div class="col-md-9">
+                <textarea class="form-control form-control-sm" id="text-p7-signed-data" rows="6"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label d-flex align-items-center" for="text-enveloped-data">Envelopded
+                Data</label>
+            <div class="col-md-9">
+                <textarea class="form-control form-control-sm" id="text-enveloped-data" rows="6"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label d-flex align-items-center" for="text-signed-enveloped-data">Signed and
+                Enveloped
+                Data</label>
+            <div class="col-md-9">
+                <textarea class="form-control form-control-sm" id="text-signed-enveloped-data" rows="6"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label d-flex align-items-center" for="text-p7-add-signed-data">P7 Add Signed
+                Data</label>
+            <div class="col-md-9">
+                <textarea class="form-control form-control-sm" id="text-p7-add-signed-data" rows="6"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label d-flex align-items-center" for="text-sym-enc-data">Sym Message</label>
+            <div class="col-md-9">
+                <textarea class="form-control form-control-sm" id="text-sym-enc-data" rows="1"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label d-flex align-items-center" for="text-rsa-enc-data">RSA Message</label>
+            <div class="col-md-9">
+                <textarea class="form-control form-control-sm" id="text-rsa-enc-data" rows="1"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label d-flex align-items-center" for="text-base64-encoded-message">Base64
+                Message</label>
+            <div class="col-md-9">
+                <textarea class="form-control form-control-sm" id="text-base64-encoded-message" rows="1"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!-- Options -->
+    <div class="col-md-5 border-right">
+        <h6 class="d-block text-center mt-2 mb-4"><b>Options</b></h6>
+
+        <div class="form-group row">
+            <label for="text-cert-id" class="col-sm-3 col-form-label d-flex align-items-center">Cert ID</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control form-control-sm" id="text-cert-id" value="test@signgate.com">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label d-flex align-items-center" for="select-cert-type">Cert Type</label>
+            <div class="col-sm-9">
+                <select class="form-control form-control-sm" id="select-cert-type" name="select-cert-type" size="1">
+                    <option selected value="SignCert">SignCert</option>
+                    <option value="EncryptCert">EncryptCert</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label d-flex align-items-center" for="select-digest-algorithm">Diegset
+                Algorithm</label>
+            <div class="col-sm-9">
+                <select class="form-control form-control-sm" id="select-digest-algorithm" name="select-digest-algorithm"
+                    size="1">
+                    <option value="SHA1">SHA1</option>
+                    <option selected value="SHA256">SHA256</option>
+                    <option value="SHA384">SHA384</option>
+                    <option value="SHA512">SHA512</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label d-flex align-items-center" for="select-rsa-version">RSA
+                Algorithm</label>
+            <div class="col-sm-8">
+                <select class="form-control form-control-sm" id="select-rsa-version" size="1">
+                    <option selected value="V15">V15</option>
+                    <option value="V21">V21</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label d-flex align-items-center" for="select-pkcs-version">PKCS
+                Version</label>
+            <div class="col-sm-8">
+                <select class="form-control form-control-sm" id="select-pkcs-version" size="1">
+                    <option value="PKCS8" selected>PKCS8</option>
+                    <option value="PKCS1">PKCS1</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label d-flex align-items-center" for="text-key-name">Key Name</label>
+            <div class="col-sm-8">
+                <input class="form-control form-control-sm" type="text" id="text-key-name" value="test@signgate.com">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label d-flex align-items-center" for="select-cipher-algorithm">Cipher
+                Algorithm</label>
+            <div class="col-sm-8">
+                <select class="form-control form-control-sm" id="select-cipher-algorithm" name="select-cipher-algorithm"
+                    size="1">
+                    <option selected value="SEED">SEED</option>
+                    <option value="AES">AES</option>
+                    <option value="DES">DES</option>
+                    <option value="3DES">3DES</option>
+                    <option value="ARIA128">ARIA128</option>
+                    <option value="RC4">RC4</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label d-flex align-items-center" for="select-cipher-mode">Mode</label>
+            <div class="col-sm-8">
+                <select class="form-control form-control-sm" id="select-cipher-mode" name="select-cipher-mode" size="1">
+                    <option selected value="CBC">CBC</option>
+                    <option value="ECB">ECB</option>
+                    <option value="CFB">CFB</option>
+                    <option value="OFB">OFB</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label d-flex align-items-center" for="select-cipher-padding">Padding</label>
+            <div class="col-sm-8">
+                <select class="form-control form-control-sm" id="select-cipher-padding" size="1">
+                    <option selected value="PADDING">PADDING</option>
+                    <option value="NOPADDING">NOPADDING</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-5 col-form-label d-flex align-items-center d-flex align-items-center" class="col-md-9"
+                for="text-certificate">한정인(개인) SignCert</label>
+            <textarea class="form-control form-control-sm" id="text-certificate"
+                rows="6">-----BEGIN CERTIFICATE-----MIIFyzCCBLOgAwIBAgIEBOAzejANBgkqhkiG9w0BAQsFADBKMQswCQYDVQQGEwJLUjENMAsGA1UECgwES0lDQTEVMBMGA1UECwwMQWNjcmVkaXRlZENBMRUwEwYDVQQDDAxzaWduR0FURSBDQTUwHhcNMTkwNzA4MDY0NTAwWhcNMjAwNzA4MTQ1OTU5WjCBkjELMAkGA1UEBhMCS1IxDTALBgNVBAoMBEtJQ0ExEzARBgNVBAsMCmxpY2Vuc2VkQ0ExFTATBgNVBAsMDOuTseuhneq4sOq0gDEZMBcGA1UECwwQS0lDQeqzoOqwneyEvO2EsDERMA8GA1UECwwI7IS87YSwUkExGjAYBgNVBAMMEe2VnOygleyduCjqsJzsnbgpMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiszgCtp4M43q6Ptq4cYoB/jqsY3EXt/LPQGcQzOT4/9nDnLtFoShADNx8i2nUZGCy4dOSexuhDeX0NwTffMK3kNQBc9SkQ5ye/ro8Gzc+v2eI+sGFH4oo/KgG+PIUjG9H5GYsY6de+TEg9+zMmhkeHDAh8I8jc0QTW9btBKxWOgSAF5JBsuL1fPdIUKskoSYH4OY8gu/6yTNMG16qoMJxzW+y2bKvx5jq1Qqf+cHGx1M5vw147BGuHJhLapgI+LoWX04hI6ysPFiyzO9IXuxonpKX3m7oKJMF5Ht2hXEvAl9O6WiUqZDfxpCPPpb8Egnp63CvZOQ/d+8wq4Jy2WZ5QIDAQABo4ICbjCCAmowgY8GA1UdIwSBhzCBhIAU2L467EWZxZ7jnOqBH9IdErA2PoihaKRmMGQxCzAJBgNVBAYTAktSMQ0wCwYDVQQKDARLSVNBMS4wLAYDVQQLDCVLb3JlYSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSBDZW50cmFsMRYwFAYDVQQDDA1LSVNBIFJvb3RDQSA0ggIQHTAdBgNVHQ4EFgQUOJKmGzgbahSwjUQWtdVn8Lcmu00wDgYDVR0PAQH/BAQDAgbAMHUGA1UdIARuMGwwagYKKoMajJpEBQIBAjBcMCwGCCsGAQUFBwIBFiBodHRwOi8vd3d3LnNpZ25nYXRlLmNvbS9jcHMuaHRtbDAsBggrBgEFBQcCAjAgHh7HdAAgx3jJncEcspQAIKz1x3jHeMmdwRzHhbLIsuQwgYgGA1UdEQSBgDB+gRVwdXJlMjcxM0BzaWduZ2F0ZS5jb22gZQYJKoMajJpECgEBoFgwVgwR7ZWc7KCV7J24KOqwnOyduCkwQTA/BgoqgxqMmkQKAQEBMDEwCwYJYIZIAWUDBAIBoCIEIIgrBYVsaT0ERzn12ajpzrTCdgQ4kN4sPHmvpTmUDd89MF8GA1UdHwRYMFYwVKBSoFCGTmxkYXA6Ly9sZGFwLnNpZ25nYXRlLmNvbTozODkvb3U9ZHA3cDE0ODAzLG91PWNybGRwLG91PUFjY3JlZGl0ZWRDQSxvPUtJQ0EsYz1LUjBEBggrBgEFBQcBAQQ4MDYwNAYIKwYBBQUHMAGGKGh0dHA6Ly9vY3NwLnNpZ25nYXRlLmNvbTo5MDIwL09DU1BTZXJ2ZXIwDQYJKoZIhvcNAQELBQADggEBAKKJVYn61+9l/+cAbY12mmLTBRPkBjtIGuCEESIncjgRFBSYCj/fDiACNoj9NpOeuzxqsXZvEXnt8mXsNT5Eg5ZnwWCDLNn4DFfmL0ShETRTeZiIG2taAhAZVxhSAlvRp+fJISnGQgvXqZht2aptoLAxsAcVkp52kHTNN/VAZKwsrbycIMUarG6GIXilzmo7PZ4ljw0cujQteHAk41UflKCh9SrKU5hCqK/d1ndk3fujih4AC3pwYyulWPy3r+UumVXeMxHerj7wgS83XkzxDtlNbE+Z4A1+MiqYC9SPXv6T1EscaCMd+DY/SlF+6CD//2V8YixISzBRy6KB3anGSAg=-----END CERTIFICATE-----</textarea>
+        </div>
+
+
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label d-flex align-items-center d-flex align-items-center"
+                for="is-view-vid">Is
+                View VID</label>
+            <div class="col-sm-8">
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="is-view-vid" checked="">
+                    <label class="custom-control-label" for="is-view-vid"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="unit-test-buttons" class="text-center col-md-2">
+        <button class="btn btn-primary btn-sm mb-1 mr-1" type="button" style="width: 100%;" onclick="testAll();">TEST
+            ALL</button>
+    </div>
+</div>
+
+<script>
+    function getCertID() {
+        return $("#text-cert-id").val();
+    }
+
+    function getSymmKeyIV() {
+        return symmKeyIV;
+    }
+
+    function getSignatureString() {
+        return $("#text-signature-data").val();
+    }
+
+    function getSignedString() {
+        return removePEMHeader(removeCRLF($("#text-p7-signed-data").val()));
+    }
+
+    function getEnvelopedString() {
+        return removePEMHeader(removeCRLF($("#text-enveloped-data").val()));
+    }
+
+    function getEncodedString() {
+        return $("#text-base64-encoded-message").val();
+    }
+
+    function getSymmetricEncryptedString() {
+        return $("#text-sym-enc-data").val();
+    }
+
+    function getRSAEncryptedString() {
+        return $("#text-rsa-enc-data").val();
+    }
+
+    function getCertType() {
+        return $("#select-cert-type").val();
+    }
+
+    function getSourceString() {
+        return $("#text-message").val();
+    }
+
+    function getDigestAlgorithm() {
+        return $("#select-digest-algorithm").val();
+    }
+
+    function getCert() {
+        return removePEMHeader(removeCRLF($("#text-certificate").val()));
+    }
+
+    function getSymAlgorithm() {
+        return $("#select-cipher-algorithm").val() + "/" + $("#select-cipher-mode").val() + "/" + $("#select-cipher-padding").val();
+    }
+
+    function getRSAVersion() {
+        return $("#select-rsa-version").val()
+    }
+
+    function getSSN() {
+        return $("#text-idn").val()
+    }
+
+    // File Path
+    function getSourceFilePath() {
+        return $("#text-file-path").val() + $("#text-file-name").val();
+    }
+
+    function getSignatureFilePath() {
+        var fileName = $("#text-file-name").val().split('.')[0];
+        return $("#text-file-path").val() + fileName + "[signautre].txt";
+    }
+
+    function getSignatureFilePathV() {
+        var fileName = $("#text-file-name").val().split('.')[0];
+        return $("#text-file-path").val() + fileName + "[signautre][verified].txt";
+    }
+
+    function gegetP7SignedFilePath() {
+        var fileName = $("#text-file-name").val().split('.')[0];
+        return $("#text-file-path").val() + fileName + "[p7signed].txt";
+    }
+
+    function gegetP7SignedFilePathV() {
+        var fileName = $("#text-file-name").val().split('.')[0];
+        return $("#text-file-path").val() + fileName + "[p7signed][verified].txt";
+    }
+
+    function getEnvelopedFilePath() {
+        var fileName = $("#text-file-name").val().split('.')[0];
+        return $("#text-file-path").val() + fileName + "[enveloped].txt";
+    }
+
+    function getEnvelopedFilePathV() {
+        var fileName = $("#text-file-name").val().split('.')[0];
+        return $("#text-file-path").val() + fileName + "[enveloped][verified].txt";
+    }
+
+    function getSignedEnvelopedFilePath() {
+        var fileName = $("#text-file-name").val().split('.')[0];
+        return $("#text-file-path").val() + fileName + "[signedAndEnveloped].txt";
+    }
+
+    function getAddSignedFilePath() {
+        var fileName = $("#text-file-name").val().split('.')[0];
+        return $("#text-file-path").val() + fileName + "[addSigned].txt";
+    }
+
+    function getExtractCertFilePath() {
+        var fileName = $("#text-file-name").val().split('.')[0];
+        return $("#text-file-path").val() + fileName + "[extractCert].txt";
+    }
+
+    function getExtractOrgFilePath() {
+        var fileName = $("#text-file-name").val().split('.')[0];
+        return $("#text-file-path").val() + fileName + "[extractOrg].txt";
+    }
+
+    function getEncodedFileName() {
+        var fileName = $("#text-file-name").val().split('.')[0];
+        return "[encoded].txt";
+    }
+
+    function getDecodedFileName() {
+        var fileName = $("#text-file-name").val().split('.')[0];
+        return "[decoded].txt";
+    }
+
+    function getEncodedFilePath() {
+        var fileName = $("#text-file-name").val().split('.')[0];
+        return $("#text-file-path").val() + fileName + "[encoded].txt";
+    }
+
+    function getHashedFileName() {
+        var fileName = $("#text-file-name").val().split('.')[0];
+        return "[hashed].txt";
+    }
+
+    function getMacFileName() {
+        var fileName = $("#text-file-name").val().split('.')[0];
+        return "[mac].txt";
+    }
+
+    function getSymEncFileName() {
+        var fileName = $("#text-file-name").val().split('.')[0];
+        return "[sym_enc].txt";
+    }
+
+    function getSymEncFilePath() {
+        var fileName = $("#text-file-name").val().split('.')[0];
+        return $("#text-file-path").val() + fileName + "[sym_enc].txt";
+    }
+
+    function getSymDecFileName() {
+        var fileName = $("#text-file-name").val().split('.')[0];
+        return "[sym_dec].txt";
+    }
+
+    var IV = "MDEyMzQ1Njc4OTAxMjM0NQ==";
+    var symmKeyIV = "ETAxMjM0NTY3ODkwMTIzNDX2SEbk26MiVWKgf0aWjPsa";
+
+
+    var units = {
+        //환경설정
+        getVersion: {},
+        isLoadedCert: { 'ID': getCertID },
+
+        //Information
+        viewCertInfomationWithVID: { 'certType': getCertType, 'certID': getCertID },
+        generateSignatureData: { 'certType': getCertType, 'sourceString': getSourceString, 'algorithm': getDigestAlgorithm, 'certID': getCertID },
+        generateSignatureFile: { 'certType': getCertType, 'sourceFilePath': getSourceFilePath, 'outFileName': getSignatureFilePath, 'algorithm': getDigestAlgorithm, 'certID': getCertID, 'beString': "false" }, //되는데 outFile이 안나옴
+        verifySignatureData: { 'certType': getCertType, 'signatureString': getSignatureString, 'sourceString': getSourceString, 'algorithm': getDigestAlgorithm, 'certID': getCertID },
+        verifySignatureFile: { 'certType': getCertType, 'signatureFilePath': getSignatureFilePath, 'sourceFilePath': getSourceFilePath, 'algorithm': getDigestAlgorithm, 'certID': getCertID },
+        //PKCS7 
+        generatePKCS7SignedData: { 'certType': getCertType, 'sourceString': getSourceString, 'certID': getCertID },
+        generatePKCS7SignedFile: { 'certType': getCertType, 'sourceFilePath': getSourceFilePath, 'outFileName': gegetP7SignedFilePath, 'outFileType': '', 'certID': getCertID },
+        generatePKCS7SignedFileToData: { 'certType': getCertType, 'sourceFilePath': getSourceFilePath, 'certID': getCertID },
+        generatePKCS7EnvelopedData: { 'targetCert': getCert, 'sourceString': getSourceString },
+        generatePKCS7EnvelopedFile: { 'targetCert': getCert, 'sourceFilePath': getSourceFilePath, 'outFileName': getEnvelopedFilePath, 'outFileType': '' },
+        generatePKCS7EnvelopedFileToData: { 'targetCert': getCert, 'sourceFilePath': getSourceFilePath },
+        generatePKCS7SignedAndEnvelopedData: { 'certType': getCert, 'kmServerCert': getCert, 'cRandom': '', 'pText': getSourceString, 'certID': getCertID },
+        generatePKCS7SignedAndEnvelopedFile: { 'certType': getCert, 'kmServerCert': getCert, 'cRandom': '', 'sourceFilePath': getSourceFilePath, 'outFileName': getSignedEnvelopedFilePath, 'outFileType': '', 'certID': getCertID },
+        generatePKCS7SignedAndEnvelopedFileToData: { 'certType': getCertType, 'kmServerCert': getCert, 'cRandom': '', 'sourceFilePath': getSourceFilePath, 'certID': getCertID },
+
+        addPKCS7SignedData: { 'certType': getCertType, 'sourceString': getSignedString, 'certID': getCertID },
+        addPKCS7SignedFile: { 'certType': getCertType, 'sourceFilePath': gegetP7SignedFilePath, 'sourceFileType': "", 'outFileName': getAddSignedFilePath, 'outFileType': '', 'certID': getCertID },
+        verifyPKCS7SignedData: { 'signedString': getSignedString },
+        verifyPKCS7SignedFile: { 'signedFilePath': gegetP7SignedFilePath, 'inFileType': '', 'outFileName': gegetP7SignedFilePathV },
+        verifyPKCS7EnvelopedData: { 'certType': getCertType, 'envelopedString': getEnvelopedString, 'certID': getCertID },
+        verifyPKCS7EnvelopedFile: { 'certType': getCertType, 'envelopedFilePath': getEnvelopedFilePath, 'inFileType': '', 'outFileName': getEnvelopedFilePathV, 'certID': getCertID },
+
+        extractCertificatesFromMultiPKCS7SignedData: { 'order': "1", 'signedString': getSignedString },
+        extractCertificatesFromMultiPKCS7SignedFile: { 'order': "1", 'signedFilePath': gegetP7SignedFilePath, 'signedFileType': '', 'outFileName': getExtractCertFilePath },
+        extractTimeValuesFromMultiPKCS7SignedData: { 'order': "1", 'signedString': getSignedString },
+        extractTimeValuesFromMultiPKCS7SignedFile: { 'order': "1", 'signedFilePath': gegetP7SignedFilePath, 'signedFileType': '' },
+        extractOriginalDataFromMultiPKCS7SignedData: { 'signedString': getSignedString },
+        extractOriginalDataFromMultiPKCS7SignedFile: { 'signedFilePath': gegetP7SignedFilePath, 'signedFileType': '', 'outFileName': getExtractOrgFilePath },
+        extractCertCountFromMultiPKCS7SignedData: { 'signedString': getSignedString },
+        extractCertCountFromMultiPKCS7SignedFile: { 'signedFilePath': gegetP7SignedFilePath, 'signedFileType': '' },
+
+        //Base64
+        encodeBase64Data: { 'sourceString': getSourceString },
+        encodeBase64File: { 'sourceFilePath': getSourceFilePath, 'outFileName': getEncodedFileName },
+        decodeBase64Data: { 'encodedBase64String': getEncodedString },
+        decodeBase64File: { 'encodedFilePath': getEncodedFilePath, 'outFileName': getDecodedFileName },
+
+        //Digest
+        generateHashValue: { 'digestAlg': getDigestAlgorithm, 'srcData': getSourceString },
+        generateHashFileToFile: { 'digestAlg': getDigestAlgorithm, 'sourceFilePath': getSourceFilePath, 'outFileName': getHashedFileName },
+        generateHashFileToString: { 'digestAlg': getDigestAlgorithm, 'sourceFilePath': getSourceFilePath },
+        generateMAC: { 'digestAlg': getDigestAlgorithm, 'srcData': getSourceString, 'macKey': "signgate1!" },
+        generateMACFileToFile: { 'digestAlg': getDigestAlgorithm, 'sourceFilePath': getSourceFilePath, 'macKey': "signgate1!", 'outFileName': getMacFileName },
+        generateMACFileToString: { 'digestAlg': getDigestAlgorithm, 'sourceFilePath': getSourceFilePath, 'macKey': "signgate1!" },
+
+        //Symmetric
+        symmetricEncryptData: { 'algorithm': getSymAlgorithm, 'keyName': getCertID, 'sourceString': getSourceString },
+        symmetricEncryptFile: { 'algorithm': getSymAlgorithm, 'keyName': getCertID, 'sourceFilePath': getSourceFilePath, 'outFileName': getSymEncFileName },
+        symmetricDecryptData: { 'keyName': getCertID, 'encryptedString': getSymmetricEncryptedString },
+        symmetricDecryptFile: { 'keyName': getCertID, 'enctyptedFilePath': getSymEncFilePath, 'outFileName': getSymDecFileName },
+        genSymmetricKey: { 'algorithm': getSymAlgorithm, 'IV': IV, 'keyName': getCertID },
+        getSymmetricKey: { 'serverCert': getCert, 'rsaVersion': getRSAVersion, 'keyName': getCertID },
+        getSymmetricKeyIV: { 'serverCert': getCert, 'rsaVersion': getRSAVersion, 'keyName': getCertID },
+        getSymmetricIV: { 'serverCert': getCert, 'rsaVersion': getRSAVersion, 'keyName': getCertID },
+        getSymmetricKeySelf: { 'certType': getCertType, 'certID': getCertID, 'rsaVersion': getRSAVersion, 'keyName': getCertID },
+        getSymmetricKeyIVSelf: { 'certType': getCertType, 'certID': getCertID, 'rsaVersion': getRSAVersion, 'keyName': getCertID },
+        clearSymmetricKey: { 'keyName': getCertID },
+
+        //VID
+        verifyVID: { 'ssn': getSSN, 'certID': getCertID },
+        getVIDRandomValue: { 'certID': getCertID },
+
+        //key
+        getPrikey: { 'certType': getCertType, 'kmServerCert': getCert, 'rsaVersion': getRSAVersion, 'certID': getCertID, 'messageType': "" },
+        getPrikeyWithNewPassword: { 'certType': getCertType, 'messageType': "PEM", 'password': "signgate1!", 'certID': getCertID },
+
+        //RSA
+        rsaEncrypt: { 'certString': getCert, 'sourceString': getSourceString, 'rsaVersion': getRSAVersion },
+
+        //RSA
+        rsaDecrypt: { 'certType': getCertType, 'encData': getRSAEncryptedString, 'rsaVersion': getRSAVersion, 'certID': getCertID },
+        rsaDecryptToBase64: { 'certType': getCertType, 'encData': getRSAEncryptedString, 'rsaVersion': getRSAVersion, 'certID': getCertID },
+
+        //키쌍검증
+        verifyKeyPair: { 'certType': getCertType, 'certID': getCertID },
+
+        //로드된 인증서 정보 초기화
+        initCert: { 'certID': getCertID },
+    };
+
+
+    (function () {
+        for (var key in units) {
+            var btn = $(document.createElement("button"));
+            btn.addClass("btn btn-secondary btn-sm mb-1 mr-1");
+            btn.attr("type", "button");
+            btn.attr("style", "width: 100%");
+            // popver settings
+            btn.attr("data-toggle", "popover");
+            btn.attr("title", key);
+
+            btn.attr("id", key);
+            btn.html(key);
+            btn.click(function () {
+                funcCmd = $(this).attr("id");
+                processLogic.setProcessLogic("UNIT_CALLBACK");
+                NX_ShowDialog();
+            })
+
+            $('#unit-test-buttons').append(btn);
+        }
+    })();
+
+    var keys = Object.keys(units);
+    var funcIndex = 0;
+    var isCertSelected, funcCmd, allFuncTempParams, element, allFuncParams, unitFuncTempParams, unitFuncParams;
+
+    function SecuKitNXS_RESULT(cmd, res) {
+        var btn = $('#' + funcCmd);
+        btn.removeClass("btn-secondary");
+        btn.removeClass("btn-success");
+        btn.removeClass("btn-danger");
+        btn.popover('dispose');
+
+        if (res.ERROR_CODE !== undefined) {
+            btn.addClass("btn-danger");
+
+            btn.popover({
+                delay: { "hide": 100 },
+                content: res.ERROR_MESSAGE,
+                trigger: 'hover',
+                template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-header text-white bg-danger"></h3><div class="popover-body text-danger"></div></div>'
+            });
+        } else {
+            btn.addClass("btn-success");
+            var str = JSON.stringify(res);
+
+            btn.popover({
+                delay: { "hide": 100 },
+                content: str,
+                trigger: 'hover',
+                template: '<div class="popovers w-25 h-50" role="tooltip"><div class="arrow"></div><h3 class="popover-header text-white bg-success"></h3><div class="popover-body text-primary overflow-auto bg-light text-break mh-100"></div></div>'
+            })
+        }
+
+        switch (cmd) {
+            case "TEST_ALL_CALLBACK":
+                if (funcIndex == 0) { $("#text-cert-id").val(res); }
+                isCertSelected = true;
+
+                if (funcIndex >= keys.length) { funcIndex = 0; return; }
+
+                switch (funcCmd) {
+                    case "generateSignatureData":
+                        $("#text-signature-data").val(eval("res." + funcCmd));
+                        break;
+                    case "generatePKCS7SignedData":
+                        $("#text-p7-signed-data").val(eval("res." + funcCmd));
+                        break;
+                    case "generatePKCS7EnvelopedData":
+                        $("#text-enveloped-data").val(eval("res." + funcCmd));
+                        break;
+
+                    case "generatePKCS7SignedAndEnvelopedData":
+                        $("#text-signed-enveloped-data").val(eval("res." + funcCmd));
+                        break;
+
+                    case "addPKCS7SignedData":
+                        $("#text-p7-add-signed-data").val(eval("res." + funcCmd));
+                        break;
+
+                    case "symmetricEncryptData":
+                        $("#text-sym-enc-data").val(eval("res." + funcCmd));
+                        break;
+
+                    case "rsaEncrypt":
+                        $("#text-rsa-enc-data").val(eval("res." + funcCmd));
+                        break;
+
+                    case "encodeBase64Data":
+                        $("#text-base64-encoded-message").val(eval("res." + funcCmd));
+                        break;
+                    default:
+                        break;
+                }
+
+                funcCmd = keys[funcIndex];
+                allFuncTempParams = jQuery.extend(true, {}, eval("units." + funcCmd));
+
+                for (element in allFuncTempParams) {
+                    if (typeof allFuncTempParams[element] === 'function') {
+                        allFuncTempParams[element] = allFuncTempParams[element]();
+                    }
+                }
+
+                allFuncParams = JSON.stringify(allFuncTempParams);
+                secukitnxInterface.SecuKitNXS("TEST_ALL_CALLBACK." + funcCmd, allFuncParams);
+                funcIndex++;
+
+                break;
+
+            case "UNIT_CALLBACK":
+                $("#text-cert-id").val(res);
+                unitFuncTempParams = jQuery.extend({}, eval("units." + funcCmd));
+
+                for (element in unitFuncTempParams) {
+                    if (typeof unitFuncTempParams[element] === 'function') {
+                        unitFuncTempParams[element] = unitFuncTempParams[element]();
+                    }
+                }
+                unitFuncParams = JSON.stringify(unitFuncTempParams);
+                secukitnxInterface.SecuKitNXS("UNIT_RESULT_CALLBACK." + funcCmd, unitFuncParams);
+                break;
+
+            case 'UNIT_RESULT_CALLBACK':
+                switch (funcCmd) {
+                    case "generateSignatureData":
+                        $("#text-signature-data").val(eval("res." + funcCmd));
+                        break;
+                    case "generatePKCS7SignedData":
+                        $("#text-p7-signed-data").val(eval("res." + funcCmd));
+                        break;
+                    case "generatePKCS7EnvelopedData":
+                        $("#text-enveloped-data").val(eval("res." + funcCmd));
+                        break;
+
+                    case "generatePKCS7SignedAndEnvelopedData":
+                        $("#text-signed-enveloped-data").val(eval("res." + funcCmd));
+                        break;
+
+                    case "addPKCS7SignedData":
+                        $("#text-p7-add-signed-data").val(eval("res." + funcCmd));
+                        break;
+
+                    case "symmetricEncryptData":
+                        $("#text-sym-enc-data").val(eval("res." + funcCmd));
+                        break;
+
+                    case "rsaEncrypt":
+                        $("#text-rsa-enc-data").val(eval("res." + funcCmd));
+                        break;
+
+                    case "encodeBase64Data":
+                        $("#text-base64-encoded-message").val(eval("res." + funcCmd));
+                        break;
+
+                    default:
+                        break;
+                }
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    function testAll() {
+        if (funcIndex === 0)
+            isCertSelected = false;
+
+        if (!isCertSelected) {
+            //NXS 호출 버튼에 붙여야 될 코드 
+            processLogic.init();
+            processLogic.setProcessLogic("TEST_ALL_CALLBACK");
+            // 인증서 선택창 호출
+            NX_ShowDialog();
+            return;
+        }
+
+        funcCmd = keys[funcIndex];
+        processLogic.init();
+        processLogic.setProcessLogic("TEST_ALL_CALLBACK");
+    }
+
+
+</script>

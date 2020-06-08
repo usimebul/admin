@@ -1,0 +1,214 @@
+<div class="card" id="card-electronic-signature">
+    <div class="card-header">
+        <h6>Electornic Siganture <small>without Verification</small></h6>
+    </div>
+    <div class="card-body">
+        <h6 class="mb-4">Messages</h6>
+        <textarea class="form-control form-control-sm" id="textarea-message" name="textarea-message"
+            rows="4">특수문자: !@#$%^&*()_+{}|숫자: 1234567890한글: 하나에  가슴속에 새겨지는 그리고 피어나듯이 내린 봅니다. 영어: Lorem ipsum dolor sit amet, consectetur</textarea>
+        <div class="d-none mt-4" id="detached-message">
+            <label class="col-form-label" for="textarea-detached-message">Detached Message</label>
+            <textarea class="form-control form-control-sm" id="textarea-detached-message"
+                name="textarea-detached-message" placeholder="Detached Signature Message" rows="4"></textarea>
+        </div>
+
+        <h6 class="mt-4 mb-4">Signature Options</h6>
+        <!-- row -->
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="select-signature-type">Signature Type</label>
+                    <div class="col-sm-8">
+                        <select class="form-control form-control-sm" id="select-signature-type"
+                            name="select-signature-type" size="1">
+                            <option value="p1sign">P1 sign</option>
+                            <option selected value="p7sign">P7 sign</option>
+                            <option value="envelop">Envelop</option>
+                            <option value="signedAndEnvelop">Sign and envelop</option>
+                            <option value="addSign">Add sign</option>
+                            <option value="signDetached">Detached sign</option>
+                            <option value="addSignDetached">Add detached signature</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="select-charset">Charset</label>
+                    <div class="col-sm-8">
+                        <select class="form-control form-control-sm" id="select-charset" name="select-charset" size="1">
+                            <option selected value="utf8">UTF8</option>
+                            <option value="euckr">EUC-KR</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row-->
+
+        <!-- row -->
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="select-encoding">Encoding</label>
+                    <div class="col-sm-8">
+                        <select class="form-control form-control-sm" id="select-encoding" name="select-encoding"
+                            size="1">
+                            <option selected value="base64"> BASE64</option>
+                            <option value="hex">HEX</option>
+                            <option value="pem">PEM</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="select-digest-algorithm">Diegset
+                        Algorithm</label>
+                    <div class="col-sm-8">
+                        <select class="form-control form-control-sm" id="select-digest-algorithm"
+                            name="select-digest-algorithm" size="1">
+                            <option value="sha1">SHA1</option>
+                            <option selected value="sha256">SHA256</option>
+                            <option value="sha384">SHA384</option>
+                            <option value="sha512">SHA512</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row-->
+
+        <!-- row -->
+        <div class="row d-none" id="cipher-algorithm">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="select-cipher-algorithm">Cipher
+                        Algorithm</label>
+                    <div class="col-sm-8">
+                        <select class="form-control form-control-sm" id="select-cipher-algorithm"
+                            name="select-cipher-algorithm" size="1">
+                            <option selected value="seedCBC">seedCBC</option>
+                            <option value="aes128-CBC">aes128-CBC</option>
+                            <option value="aes192-CBC">aes192-CBC</option>
+                            <option value="aes256-CBC">aes256-CBC</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row d-none" id="detached-option-wrapper">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="select-sign-attribute">Sign Attributes</label>
+                    <div class="col-sm-8">
+                        <select class="form-control form-control-sm" id="select-sign-attribute" size="1">
+                            <option selected value="">None</option>
+                            <option selected value="smimesignCertv2" checked>smimesignCertv2</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="hashed-content">Hashed Content</label>
+                    <div class="col-sm-8">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="hashed-content" checked="">
+                            <label class="custom-control-label" for="hashed-content"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- /.row-->
+        <div class="d-none" id="envelop-key">
+            <label for="textarea-cert">Certificate to Envelop <small>한정인(개인) signCert.der</small></label>
+            <textarea class="form-control form-control-sm" id="textarea-cert" name="textarea-cert"
+                rows="4">-----BEGIN CERTIFICATE-----MIIFbTCCBFWgAwIBAgIEBOAzezANBgkqhkiG9w0BAQsFADBKMQswCQYDVQQGEwJLUjENMAsGA1UECgwES0lDQTEVMBMGA1UECwwMQWNjcmVkaXRlZENBMRUwEwYDVQQDDAxzaWduR0FURSBDQTUwHhcNMTkwNzA4MDY0NTAwWhcNMjAwNzA4MTQ1OTU5WjCBkjELMAkGA1UEBhMCS1IxDTALBgNVBAoMBEtJQ0ExEzARBgNVBAsMCmxpY2Vuc2VkQ0ExFTATBgNVBAsMDOuTseuhneq4sOq0gDEZMBcGA1UECwwQS0lDQeqzoOqwneyEvO2EsDERMA8GA1UECwwI7IS87YSwUkExGjAYBgNVBAMMEe2VnOygleyduCjqsJzsnbgpMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjHTwG4ivPqan9UKPfEm29mAd4yozXYRVOI/BLKf/lKDgoelwjAqlpzhj3SVwKAhlUTuKflBY9DYUjLvDy9qGwTTO4sWPZgynyNJ3u2QGWdRCWTHSbVRkFvCJtlrvtXjhiPvcGpLBc6hZQRJRV+SrQzN22SaKT9P3zIaw8hOQbN/jbieZzLVcVWUZT8pO/5a59k/VGTQIQOoj5Q+Ab9/jA49BLkTJWfVU1Kq1NFshRUsFMi3FFwzRCUfoFOlMBPDjOxQ078X+jlREPBqeZ0Lz3BQUhnD6EWEoa+saUigp/sLm5zuawqMnU7PNgAhzZKJtIvbfHN0V8UeP7h+7BFByPQIDAQABo4ICEDCCAgwwgY8GA1UdIwSBhzCBhIAU2L467EWZxZ7jnOqBH9IdErA2PoihaKRmMGQxCzAJBgNVBAYTAktSMQ0wCwYDVQQKDARLSVNBMS4wLAYDVQQLDCVLb3JlYSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSBDZW50cmFsMRYwFAYDVQQDDA1LSVNBIFJvb3RDQSA0ggIQHTAdBgNVHQ4EFgQUZP5K2MhZ2EOlHY4vLfM2cY6ERV0wDgYDVR0PAQH/BAQDAgUgMBcGA1UdIAQQMA4wDAYKKoMajJpEBQIBAjCBiAYDVR0RBIGAMH6BFXB1cmUyNzEzQHNpZ25nYXRlLmNvbaBlBgkqgxqMmkQKAQGgWDBWDBHtlZzsoJXsnbgo6rCc7J24KTBBMD8GCiqDGoyaRAoBAQEwMTALBglghkgBZQMEAgGgIgQgiCsFhWxpPQRHOfXZqOnOtMJ2BDiQ3iw8ea+lOZQN3z0wXwYDVR0fBFgwVjBUoFKgUIZObGRhcDovL2xkYXAuc2lnbmdhdGUuY29tOjM4OS9vdT1kcDdwMTQ4MDMsb3U9Y3JsZHAsb3U9QWNjcmVkaXRlZENBLG89S0lDQSxjPUtSMEQGCCsGAQUFBwEBBDgwNjA0BggrBgEFBQcwAYYoaHR0cDovL29jc3Auc2lnbmdhdGUuY29tOjkwMjAvT0NTUFNlcnZlcjANBgkqhkiG9w0BAQsFAAOCAQEAXB7becgNCzhBSXHM07XkyOAO2k258wwqZra8CddkpXLnPVyb4OupAgHhR3YiRGFSUqRtttPHUwwAqmPfToCj3HFYS3wEan2L4kLLPq00sOTlHgOVR6KBQ1N8dM1w3atyAH5ezGlcUYWP2CUMQZVPZ+RPgcfEdcX0xoYeOhWw05/Cr1b2hLcG0wLssEruJG3+1dHc4jO7rnucIPANHcSup11vne1KcPmFrMCSzLUAu5PItc/vj+Bppu/mof6llMPpuOx1urGRlOI3Bq+ZRCX0PEDx77kCbnHhp6BTzoOTU0R31umDTxVpYSjybploHbPT2WoXEhhIpvAVH9v6lIj71A==-----END CERTIFICATE-----</textarea>
+        </div>
+
+        <button class="btn btn-sm btn-pill btn-block btn-primary mt-4" id="button-sign" type="button">Sign</button>
+
+        <h6 class="mt-4 mb-4">Result</h6>
+        <textarea class="form-control form-control-sm" id="textarea-sign-result" rows="6"
+            placeholder="결과가 여기에 표시됩니다."></textarea>
+
+    </div>
+</div>
+
+<script>
+    var signatureMethod;
+    $('#select-signature-type').change(function () {
+        signatureMethod = $(this).val();
+        $('#envelop-key, #detached-message, #cipher-algorithm, #detached-option-wrapper').addClass('d-none');
+
+        if (["envelop", "signedAndEnvelop"].indexOf(signatureMethod) !== -1) {
+            $('#envelop-key, #cipher-algorithm').removeClass('d-none');
+        }
+        else if (signatureMethod === "signDetached") {
+            $('#detached-option-wrapper').removeClass('d-none');
+        }
+        else if (signatureMethod === "addSignDetached") {
+            $('#detached-message').removeClass('d-none');
+            $('#detached-option-wrapper').removeClass('d-none');
+        }
+    });
+
+    function callback(result, error) {
+        if (error)
+            return;
+
+        $('#textarea-sign-result').val(result);
+        KICA_DIALOG.closeSelectCertificateDialog();
+    }
+
+    $('#button-sign').click(function () {
+        signatureMethod = $('#select-signature-type').val();
+
+        var message = $('#textarea-message').val();
+        var options = {
+            charset: $('#select-charset').val(),
+            encoding: $('#select-encoding').val(),
+            outputEncoding: $('#select-encoding').val()
+        }
+
+        var cert;
+        if (signatureMethod !== "envelop")
+            options.digestAlg = $('#select-digest-algorithm').val();
+
+        if (["envelop", "signedAndEnvelop"].indexOf(signatureMethod) !== -1) {
+            cert = $("#textarea-cert").val();
+            options.cipherAlg = $('#select-cipher-algorithm').val();
+
+        }
+
+        switch (signatureMethod) {
+            case "envelop":
+                eval("html5Api." + signatureMethod + "(cert, message, options, callback)");
+                break;
+            case "signedAndEnvelop":
+                eval("html5DialogApi." + signatureMethod + "(cert, message, options, callback)");
+                break;
+            case "addSignDetached":
+                var detachedMessage = $('#textarea-detached-message').val();
+                eval("html5DialogApi." + signatureMethod + "(detachedMessage, message, options, callback)");
+                break;
+
+            case "signDetached":                
+                options.hashedContent = $("#hashed-content").prop('checked');;
+                if(options.hashedContent)
+                    message = webnpki.bin.decodeHex(message);
+
+                options.authAttrs = [$("#select-sign-attribute").val()];
+                eval("html5DialogApi." + + "(message, options, callback)");
+
+            default:
+                eval("html5DialogApi." + signatureMethod + "(message, options, callback)");
+                break;
+        }
+    });
+</script>

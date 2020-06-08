@@ -1,4 +1,5 @@
 "use strict"; // Start of use strict
+var rootPath = "";
 
 (function($) {
     var elements = $("[include-html]");
@@ -74,6 +75,11 @@ window.onload = function() {
             collapseItem.parent().parent().parent().children('a').removeClass('collapsed');
         }
     });
+
+    $(".collapse-item, .nav-link[href!='#']").each(function(index, element){
+        var href = $(element).attr("href");
+        
+    })
 }
 
 // SPA using hash
@@ -87,12 +93,12 @@ function router(path) {
         if (status === "success")
             root.html(data);
         else {
-            $.get("/404.html", function(data, status) {
+            $.get(rootPath + "/404.html", function(data, status) {
                 root.html(data);
             })
         }
     }).fail(function() {
-        $.get("/404.html", function(data, status) {
+        $.get(rootPath + "/404.html", function(data, status) {
             root.html(data);
         })
     }).always(function() {

@@ -1,5 +1,5 @@
 (function() {
-    var urlBase = "/views/secukit-html5/v1.1.0.2"
+    var urlBase = "/views/secukit-html5/v1.1.0.2";
 
     /* 환경 변수 설정 시작 */
     window.webnpki_config = {
@@ -89,7 +89,7 @@
         askPwd: false,
 
         /* webnpki 모듈의 라이센스 2020-04-22 09:20:31	  */
-        license: 'b6a7b066b631b152b025b950b524b859b465b212b595b041b534b35db455b04cb5f4b95fb066be74b627c00f',
+        license: 'b6a7b066b631b152b025b950b524b859b465b212b595b041b534b25db465b14db594b95fb066be74b627c00f',
 
         /* keyboard security
          * 빈 문자열 설정 시, 키보드 보안 미적용

@@ -8,7 +8,7 @@ if (document.location.hostname.indexOf('domain') >= 0) {
 }
 else {
     // 개발자 라이센스 만료일 : 2018-10-10
-    NXS_LICENSE = 'aytFSUdiZUlZQUlmS3dCdEUyMkVkdzJ6NGxtRmZtTGFSS3ZTQm5EZFFlem5Zd01ldG9IMWJRVUIzeWZzTmhwa3UvWEJLS3pQU2lRZ0xMeEZZOWlqTmc9PVw0djlXT1ZkNGFWdz1cYWN0YjI0bTBNdlpJSzIvQW40RzZzbmYwMTFZPQ=='; 
+    NXS_LICENSE = 'M0RaZENNakFGN1BFcy9lazhYamxtdmt4R01LNGpRMlk3TjZReldabkljMjBHdTlXc21HMHlwc1h6aW1PVTIwVXNScDFFSXp6MS9ZTSt4dGV0eWw1L1E9PVxUS25pL2haOWNVUT1cMHd5cDZ5WmhYdkJ2L2hGa0VoNFJ2Q3NpN2dzPQ=='; 
 }
 
 

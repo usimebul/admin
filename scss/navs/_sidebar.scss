@@ -127,7 +127,7 @@
         }
         .sidebar-brand-icon i.kica-logo {
             &::before {
-                content: url("/img/logo_kica_eng.png");
+                content: url("../img/logo_kica_eng.png");
             }
             transform: scale(.5);
             font-size: 2rem;
