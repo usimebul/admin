@@ -689,7 +689,7 @@ KICA_SECUKITNXDIV += '<div class=\"pki-bottom-img\"></div>';
 KICA_SECUKITNXDIV += '</div>';
 KICA_SECUKITNXDIV += '<!-- //인증서 발급&재발급&갱신 중 알림 -->';
 KICA_SECUKITNXDIV += '<!-- 인증서 발급&재발급&갱신 성공 알림 -->';
-KICA_SECUKITNXDIV += '<div class=\"pki-wrap typeA\" id=\"nx-issue-success-alert\" style=\"display: none;\">';
+KICA_SECUKITNXDIV += '<div class=\"pki-wrap typeA\" id=\"nx-relay-fails-alert\" style=\"display: none;\">';
 KICA_SECUKITNXDIV += '<div class=\"pki-head\" id=\"nx-issue-success-alert-head\">';
 KICA_SECUKITNXDIV += '</div>';
 KICA_SECUKITNXDIV += '<div class=\"pki-body\">';
@@ -756,6 +756,104 @@ KICA_SECUKITNXDIV += '</div>';
 KICA_SECUKITNXDIV += '<div class=\"pki-bottom-img\"></div>';
 KICA_SECUKITNXDIV += '</div>';
 KICA_SECUKITNXDIV += '<!-- //인증서 폐지-->';
+
+KICA_SECUKITNXDIV += '<!-- 인증서 이동복사 PC2PHONE -->';
+KICA_SECUKITNXDIV += '<div class=\"pki-wrap typeA\" id=\"nx-cert-pc2phone\" style=\"display: none;\">';
+KICA_SECUKITNXDIV += '<div class=\"pki-head\">';
+KICA_SECUKITNXDIV += '<h1>' + "인증번호" + '</h1>';
+KICA_SECUKITNXDIV += '</div>';
+KICA_SECUKITNXDIV += '<div class=\"pki-body\">';
+KICA_SECUKITNXDIV += '<div class=\"pki-con-wrap\">';
+KICA_SECUKITNXDIV += '<h2 class=\"tit2\">' + "스마트폰에서 확인한 인증번호를 입력해주세요." + '</h2>';
+KICA_SECUKITNXDIV += '<div class=\"gray-box\">';
+KICA_SECUKITNXDIV += '<div id=\"nx-cert-revoke-box\"><input type=\"text\" style=\"width:30%\" id="pc2phone_auth_1" maxlength=\"4\" onkeypress=\"return isNumberKey(event)\" >' + " - " + '<input type=\"text\" style=\"width:30%\" id="pc2phone_auth_2" maxlength=\"4\" onkeypress=\"return isNumberKey(event)\"  >' + " - " + '<input type=\"text\" style=\"width:30%\" id="pc2phone_auth_3" maxlength=\"4\" onkeypress=\"return isNumberKey(event)\" ><br/><br/>' + "인증번호는 스마트폰과 PC가 동일해야하므로 주의하시기 바랍니다." + '</div>';
+KICA_SECUKITNXDIV += '</div>';
+KICA_SECUKITNXDIV += '</div>';
+KICA_SECUKITNXDIV += '</div>';
+KICA_SECUKITNXDIV += '<div class=\"pki-bottom\">';
+KICA_SECUKITNXDIV += '<button class=\"btn-ok\" onclick=\"NX_Issue_pubUi.pc2phoneConfirm();\">' + "확인" + '</button>';
+KICA_SECUKITNXDIV += '<button class=\"btn-cancel\" onclick=\"NX_Issue_pubUi.pc2phoneCancel();\">' + "취소" + '</button>';
+KICA_SECUKITNXDIV += '</div>';
+KICA_SECUKITNXDIV += '<div class=\"pki-bottom-img\"></div>';
+KICA_SECUKITNXDIV += '</div>';
+//KICA_SECUKITNXDIV += '</form>';
+KICA_SECUKITNXDIV += '<!-- //인증서 이동복사 PC2PHONE-->';
+
+
+
+KICA_SECUKITNXDIV += '<!-- 인증서 이동복사 PHONE2PC -->';
+KICA_SECUKITNXDIV += '<div class=\"pki-wrap typeA\" id=\"nx-cert-phone2pc-authcode\" style=\"display: none;\">';
+KICA_SECUKITNXDIV += '<div class=\"pki-head\">';
+KICA_SECUKITNXDIV += '<h1>' + "인증번호" + '</h1>';
+KICA_SECUKITNXDIV += '</div>';
+KICA_SECUKITNXDIV += '<div class=\"pki-body\">';
+KICA_SECUKITNXDIV += '<div class=\"pki-con-wrap\">';
+KICA_SECUKITNXDIV += '<h2 class=\"tit2\">' + "전송받은 인증번호는 아래와 같습니다." + '</h2>';
+KICA_SECUKITNXDIV += '<div class=\"gray-box\">';
+KICA_SECUKITNXDIV += '<div id=\"nx-cert-delete-box\"><input type=\"text\" style=\"width:30%\" id="phone2pc_auth_1" maxlength=\"4\" disabled=\"disabled\" style=\"background-color:#CCCCCC\" >' + " - " + '<input type=\"text\" style=\"width:30%\" id="phone2pc_auth_2" maxlength=\"4\" disabled=\"disabled\" style=\"background-color:#CCCCCC\"  >' + " - " + '<input type=\"text\" style=\"width:30%\" id="phone2pc_auth_3" maxlength=\"4\" disabled=\"disabled\" style=\"background-color:#CCCCCC\"  ><br/><br/>' + "인증번호는 스마트폰과 PC가 동일해야하므로 주의하시기 바랍니다." + '</div>';
+KICA_SECUKITNXDIV += '</div>';
+KICA_SECUKITNXDIV += '</div>';
+KICA_SECUKITNXDIV += '</div>';
+KICA_SECUKITNXDIV += '<div class=\"pki-bottom\">';
+KICA_SECUKITNXDIV += '<button class=\"btn-ok\" onclick=\"NX_Issue_pubUi.phone2pc_Auth_Confirm();\">' + "확인" + '</button>';
+KICA_SECUKITNXDIV += '<button class=\"btn-cancel\" onclick=\"NX_Issue_pubUi.phone2pc_Auth_Cancel();\">' + "취소" + '</button>';
+KICA_SECUKITNXDIV += '</div>';
+KICA_SECUKITNXDIV += '<div class=\"pki-bottom-img\"></div>';
+KICA_SECUKITNXDIV += '</div>';
+KICA_SECUKITNXDIV += '<!-- 인증서 이동복사 PHONE2PC -->';
+
+
+KICA_SECUKITNXDIV += '<!-- 인증서 이동복사 PHONE2PC 인증서 암호 입력 -->';
+KICA_SECUKITNXDIV += '<div class=\"pki-wrap typeA\" id=\"nx-cert-phone2pc-pwd\" style=\"display: none;\">';
+KICA_SECUKITNXDIV += '<div class=\"pki-head\">';
+KICA_SECUKITNXDIV += '<h1>' + "인증서 비밀번호 입력" + '</h1>';
+KICA_SECUKITNXDIV += '</div>';
+KICA_SECUKITNXDIV += '<div class=\"pki-body\">';
+KICA_SECUKITNXDIV += '<div class=\"pki-con-wrap\">';
+KICA_SECUKITNXDIV += '<h2 class=\"tit2\">' + "인증서 비밀번호를 입력하십시오." + '</h2>';
+KICA_SECUKITNXDIV += '<div class=\"gray-box\">';
+KICA_SECUKITNXDIV += '<div id=\"nx-cert-delete-box\"><input type=\"password\" style=\"width:100%\" id="phone2pc_pwd" ><br/><br/>' + "스마트폰에서 입력한 인증서 비밀번호와 동일한 비밀번호를 입력하시기 바랍니다." + '</div>';
+KICA_SECUKITNXDIV += '</div>';
+KICA_SECUKITNXDIV += '</div>';
+KICA_SECUKITNXDIV += '</div>';
+KICA_SECUKITNXDIV += '<div class=\"pki-bottom\">';
+KICA_SECUKITNXDIV += '<button class=\"btn-ok\" onclick=\"NX_Issue_pubUi.phone2pc_pwd_Confirm();\">' + "확인" + '</button>';
+KICA_SECUKITNXDIV += '<button class=\"btn-cancel\" onclick=\"NX_Issue_pubUi.phone2pc_pwd_Cancel();\">' + "취소" + '</button>';
+KICA_SECUKITNXDIV += '</div>';
+KICA_SECUKITNXDIV += '<div class=\"pki-bottom-img\"></div>';
+KICA_SECUKITNXDIV += '</div>';
+KICA_SECUKITNXDIV += '<!-- 인증서 이동복사 PHONE2PC 인증서 암호 입력 -->';
+
+
+
+KICA_SECUKITNXDIV += '<!-- 인증서 이동복사 성공 알림 -->';
+KICA_SECUKITNXDIV += '<div class=\"pki-wrap typeA\" id=\"nx-relay-success-alert\" style=\"display: none;\">';
+KICA_SECUKITNXDIV += '<div class=\"pki-head\" id=\"nx-relay-success-alert-head\">';
+KICA_SECUKITNXDIV += '</div>';
+KICA_SECUKITNXDIV += '<div class=\"pki-body\">';
+KICA_SECUKITNXDIV += '<div class=\"pki-con-wrap\" id=\"nx-relay-succes-alert-box\"></div>';
+KICA_SECUKITNXDIV += '</div>';
+KICA_SECUKITNXDIV += '<div class=\"pki-bottom\">';
+KICA_SECUKITNXDIV += '<button class=\"btn-ok\" onclick=\"NX_Issue_pubUi.phone2pc_success_Confirm();\">' + NX_ISSUE_SUCCESS_ALERT_1 + '</button>';
+KICA_SECUKITNXDIV += '</div>';
+KICA_SECUKITNXDIV += '<div class=\"pki-bottom-img\"></div>';
+KICA_SECUKITNXDIV += '</div>';
+KICA_SECUKITNXDIV += '<!-- //인증서 이동복사 성공 알림 -->';
+KICA_SECUKITNXDIV += '<!-- 인증서 이동복사 실패 알림 -->';
+KICA_SECUKITNXDIV += '<div class=\"pki-wrap typeA\" id=\"nx-relay-fail-alert\" style=\"display: none;\">';
+KICA_SECUKITNXDIV += '<div class=\"pki-head\" id=\"nx-relay-fail-alert-head\">';
+KICA_SECUKITNXDIV += '<!--<div class=\"nx-relay-fail-alert-head-msg\"></div>-->';
+KICA_SECUKITNXDIV += '</div>';
+KICA_SECUKITNXDIV += '<div class=\"pki-body\">';
+KICA_SECUKITNXDIV += '<div class=\"pki-con-wrap\" id=\"nx-relay-fail-alert-box\"></div>';
+KICA_SECUKITNXDIV += '</div>';
+KICA_SECUKITNXDIV += '<div class=\"pki-bottom\">';
+KICA_SECUKITNXDIV += '<button class=\"btn-ok\" onclick=\"NX_Issue_pubUi.phone2pc_fail_Confirm();\">' + NX_ISSUE_FAIL_ALERT_1 + '</button>';
+KICA_SECUKITNXDIV += '</div>';
+KICA_SECUKITNXDIV += '<div class=\"pki-bottom-img\"></div>';
+KICA_SECUKITNXDIV += '</div>';
+KICA_SECUKITNXDIV += '<!-- //인증서 이동복사 실패 알림 -->';
+
 KICA_SECUKITNXDIV += '</div>';
 
 // 클라이언트 로딩 전 화면 이벤트 차단을 위해 추가
