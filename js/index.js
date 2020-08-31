@@ -19,7 +19,7 @@ var rootPath = "";
 
 window.onload = function() {
     // Toggle the side navigation
-    $("#sidebarToggle, #sidebarToggleTop").on('click', function(e) {
+    $(document).on('click', "#sidebarToggle, #sidebarToggleTop", function(e) {
         $("body").toggleClass("sidebar-toggled");
         $(".sidebar").toggleClass("toggled");
         if ($(".sidebar").hasClass("toggled")) {

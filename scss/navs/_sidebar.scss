@@ -101,7 +101,7 @@
         }
     }
     &.toggled {
-        width: 0 !important;
+        display: none;
         overflow: hidden;
         #sidebarToggle::after {
             content: '\f105';

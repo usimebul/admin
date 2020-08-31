@@ -1,0 +1,76 @@
+<h6>Release Notes <small id="version"></small></h6>
+<span id="release-note"></span>
+<hr>
+
+<div class="row">
+    <div class="col-md">
+        <div class="card">
+            <div class="card-header text-white bg-primary">
+                New
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">GeneratePKCS7SignedDataDetachedEWS 기능 추가</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md">
+        <div class="card">
+            <div class="card-header text-white bg-info">
+                Improved
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">-</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md">
+        <div class="card">
+            <div class="card-header text-white bg-warning">
+                Fix
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">-</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    (function () {
+        var urls = location.href.split("/");
+        $('#version').html(urls[urls.length - 2]);
+    })();
+
+    function SecuKitNX_Ready(res) {
+        if (res) {
+            var cmd = 'NXgetVersion.getVersion';
+            var Data = {
+                'version': 'NULL'
+            };
+            var param = JSON.stringify(Data);
+
+            secukitnxInterface.SecuKitNXS(cmd, param);
+        }
+    }
+
+    function SecuKitNXS_RESULT(cmd, res) {
+        if (res.ERROR_CODE !== undefined) {
+            // Error Message 출력
+            $('.nx-cert-select').hide(); $('#nx-pki-ui-wrapper').hide(); KICA_Error.init();
+            KICA_Error.setError(res.ERROR_CODE, res.ERROR_MESSAGE);
+            var errorMsg = KICA_Error.getError();
+            alert(errorMsg);
+            return;
+        }
+
+        switch (cmd) {
+            case "NXgetVersion":
+                $("#release-note").html("현재 설치된 버전: " + res.version[0] + "." + res.version[1] + "." + res.version[2] + "." + res.version[3]);
+                console.log(res);
+            default: break;
+        }
+    }
+</script>

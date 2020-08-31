@@ -1,0 +1,629 @@
+<div class="row">
+    <!-- Messages -->
+    <div class="col-md-5 border-right">
+        <div class="card">
+            <div class="card-header text-center"><strong>Messages</strong></div>
+            <div class="card-body" style="min-height: 35rem;">
+                <h6 class="d-block text-center mt-2 mb-4"><b></b></h6>
+
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label d-flex align-items-center" for="textarea-message"><span
+                            class="ml-auto text-right">Message</span></label>
+                    <div class="col-md-9">
+                        <textarea class="form-control form-control-sm" id="textarea-message"
+                            rows="2">특수문자: !@#$%^&*()_+{}|숫자: 1234567890한글: 하나에  가슴속에 새겨지는 그리고 피어나듯이 내린 봅니다. 영어: Lorem ipsum dolor sit amet, consectetur</textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label d-flex align-items-center" for="textarea-hash"><span
+                            class="ml-auto text-right">Hash</span></label>
+                    <div class="col-md-9">
+                        <textarea class="form-control form-control-sm" id="textarea-hash" rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label d-flex align-items-center" for="textarea-idn"><span
+                            class="ml-auto text-right">IDN</span></label>
+                    <div class="col-md-9">
+                        <textarea class="form-control form-control-sm" id="textarea-idn"
+                            rows="1">1234561234563</textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label d-flex align-items-center" for="textarea-signature"><span
+                            class="ml-auto text-right">Signature</span></label>
+                    <div class="col-md-9">
+                        <textarea class="form-control form-control-sm" id="textarea-signature" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label d-flex align-items-center"
+                        for="textarea-detached-signature"><span class="ml-auto text-right">Detached
+                            Signature</span></label>
+                    <div class="col-md-9">
+                        <textarea class="form-control form-control-sm" id="textarea-detached-signature"
+                            rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label d-flex align-items-center"
+                        for="textarea-encrypted-message"><span class="ml-auto text-right">Encrypted
+                            Message</span></label>
+                    <div class="col-md-9">
+                        <textarea class="form-control form-control-sm" id="textarea-encrypted-message"
+                            rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label d-flex align-items-center"
+                        for="textarea-hex-encoded-message"><span class="ml-auto text-right">Hex Encoded
+                            Message</span></label>
+                    <div class="col-md-9">
+                        <textarea class="form-control form-control-sm" id="textarea-hex-encoded-message"
+                            rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label d-flex align-items-center"
+                        for="textarea-base64-encoded-message"><span class="ml-auto text-right">Base64 Encoded
+                            Message</span></label>
+                    <div class="col-md-9">
+                        <textarea class="form-control form-control-sm" id="textarea-base64-encoded-message"
+                            rows="1"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Options -->
+    <div class="col-md-5 border-right">
+        <div class="card">
+            <div class="card-header text-center"><strong>Options</strong></div>
+            <div class="card-body" style="min-height: 35rem;">
+
+                <div class="form-group row">
+                    <label for="select-digest-algorithm" class="col-sm-3 col-form-label d-flex align-items-center"><span
+                            class="ml-auto text-right">Digest
+                            Algorithm</span></label>
+                    <div class="col-sm-9">
+                        <select class="form-control form-control-sm form-control form-control-sm-sm"
+                            id="select-digest-algorithm">
+                            <option value="sha1">SHA1</option>
+                            <option selected value="sha256">SHA256</option>
+                            <option value="sha384">SHA384</option>
+                            <option value="sha512">SHA512</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="select-charset" class="col-sm-3 col-form-label d-flex align-items-center"><span
+                            class="ml-auto text-right">Characterset</span></label>
+                    <div class="col-sm-9">
+                        <select class="form-control form-control-sm form-control form-control-sm-sm"
+                            id="select-charset">
+                            <option selected value="utf8">UTF8</option>
+                            <option value="euckr">EUC-KR</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="select-encoding" class="col-sm-3 col-form-label d-flex align-items-center"><span
+                            class="ml-auto text-right">Output Encoding</span></label>
+                    <div class="col-sm-9">
+                        <select class="form-control form-control-sm form-control form-control-sm-sm"
+                            id="select-encoding">
+                            <option selected value="base64"> BASE64</option>
+                            <option value="hex">HEX</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="select-rsa-algorithm" class="col-sm-3 col-form-label d-flex align-items-center"><span
+                            class="ml-auto text-right">RSA
+                            Algorithm</span></label>
+                    <div class="col-sm-9">
+                        <select class="form-control form-control-sm form-control form-control-sm-sm"
+                            id="select-rsa-algorithm">
+                            <option value="RSAES-OAEP">RSAES-OAEP</option>
+                            <option selected value="RSAES-PKCS1-V1_5">RSAES-PKCS1-V1_5</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="select-cipher-algorithm" class="col-sm-3 col-form-label d-flex align-items-center"><span
+                            class="ml-auto text-right">Cipher
+                            Algorithm</span></label>
+                    <div class="col-sm-9">
+                        <select class="form-control form-control-sm form-control form-control-sm-sm"
+                            id="select-cipher-algorithm">
+                            <option selected value="seed">SEED</option>
+                            <option value="aes-">AES</option>
+                            <option value="aes192-">AES</option>
+                            <option value="aes256-">AES256</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="select-block-mode" class="col-sm-3 col-form-label d-flex align-items-center"><span
+                            class="ml-auto text-right">Block Mode</span></label>
+                    <div class="col-sm-9">
+                        <select class="form-control form-control-sm form-control form-control-sm-sm"
+                            id="select-block-mode">
+                            <option selected value="CBC">CBC</option>
+                            <option value="ECB">ECB</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label d-flex align-items-center d-flex align-items-center"
+                        for="textarea-key"><span class="ml-auto text-right"><span
+                                class="ml-auto text-right"></span>Key</span></label>
+                    <div class="col-md-9">
+                        <textarea class="form-control form-control-sm" id="textarea-key" rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label d-flex align-items-center d-flex align-items-center"
+                        for="textarea-iv"><span class="ml-auto text-right"><span
+                                class="ml-auto text-right"></span>IV</span></label>
+                    <div class="col-md-9">
+                        <textarea class="form-control form-control-sm" id="textarea-iv" rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label d-flex align-items-center d-flex align-items-center"
+                        for="textarea-certificate"><span class="ml-auto text-right"><span
+                                class="ml-auto text-right"></span>Certificate</span></label>
+                    <div class="col-md-9">
+                        <textarea class="form-control form-control-sm" id="textarea-certificate"
+                            rows="4">-----BEGIN CERTIFICATE-----MIIFyzCCBLOgAwIBAgIEBVo2TTANBgkqhkiG9w0BAQsFADBKMQswCQYDVQQGEwJLUjENMAsGA1UECgwES0lDQTEVMBMGA1UECwwMQWNjcmVkaXRlZENBMRUwEwYDVQQDDAxzaWduR0FURSBDQTUwHhcNMjAwNjE3MDAyMjEwWhcNMjEwNzA4MTQ1OTU5WjCBkjELMAkGA1UEBhMCS1IxDTALBgNVBAoMBEtJQ0ExEzARBgNVBAsMCmxpY2Vuc2VkQ0ExFTATBgNVBAsMDOuTseuhneq4sOq0gDEZMBcGA1UECwwQS0lDQeqzoOqwneyEvO2EsDERMA8GA1UECwwI7IS87YSwUkExGjAYBgNVBAMMEe2VnOygleyduCjqsJzsnbgpMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhk4R6nSzx2X4Kt751CtXj5oQOunvKXhzrieivDXc5qQviLMR+w6IqXHC/Z6q1jOagdArH9AQmKnD/26Tnhgud9jDVDmBaUns61scQ4GBD6VpkBtVsPe439nXOmsGU3ZLgf31YQfECzBk8zroWCvrsFFQC4uR3tkV768GQm6OwBk38JMPjJpqyZLR0ZzQJqBcepkI5iqmD+rYsMkm4HmLZY618egGP6mGGTmy9/l7xFGS2RiwSb7vtMLY/U94PkOR5XtQwH/k6EKfoZRTItDoRqsZKHpo189+rQExeBAC+748QK+Y+Yom/yYJda5MJgw7w1k4RIfwr0iXKWWgp8mLjQIDAQABo4ICbjCCAmowgY8GA1UdIwSBhzCBhIAU2L467EWZxZ7jnOqBH9IdErA2PoihaKRmMGQxCzAJBgNVBAYTAktSMQ0wCwYDVQQKDARLSVNBMS4wLAYDVQQLDCVLb3JlYSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSBDZW50cmFsMRYwFAYDVQQDDA1LSVNBIFJvb3RDQSA0ggIQHTAdBgNVHQ4EFgQU/0odTZLJLQDtHlB+IhMY3lRtzCMwDgYDVR0PAQH/BAQDAgbAMHUGA1UdIARuMGwwagYKKoMajJpEBQIBAjBcMCwGCCsGAQUFBwIBFiBodHRwOi8vd3d3LnNpZ25nYXRlLmNvbS9jcHMuaHRtbDAsBggrBgEFBQcCAjAgHh7HdAAgx3jJncEcspQAIKz1x3jHeMmdwRzHhbLIsuQwgYgGA1UdEQSBgDB+gRVwdXJlMjcxM0BzaWduZ2F0ZS5jb22gZQYJKoMajJpECgEBoFgwVgwR7ZWc7KCV7J24KOqwnOyduCkwQTA/BgoqgxqMmkQKAQEBMDEwCwYJYIZIAWUDBAIBoCIEIAD0qdxBiV9bf4u4z0VtZWhXZAvsZyLJVMIgOYESyjm6MF8GA1UdHwRYMFYwVKBSoFCGTmxkYXA6Ly9sZGFwLnNpZ25nYXRlLmNvbTozODkvb3U9ZHA3cDIyNzk5LG91PWNybGRwLG91PUFjY3JlZGl0ZWRDQSxvPUtJQ0EsYz1LUjBEBggrBgEFBQcBAQQ4MDYwNAYIKwYBBQUHMAGGKGh0dHA6Ly9vY3NwLnNpZ25nYXRlLmNvbTo5MDIwL09DU1BTZXJ2ZXIwDQYJKoZIhvcNAQELBQADggEBABrkL9RsgVGNRjX7CIUFULklx6IOAFaSIEZUZsxtX1l3w3thW0GUnt4hXvN7RD4pqVxAgxiVJaU/jRqTUTUIxgpOGPRpQzlR7cfbBotAZI7R9WesIaUV/gAucTMIv1qNBDn9Bd9S68A49raWE91zpMRLjkDqyjrL9MyFgQWsIFj06bxc7gj6lGO5XDEiFx5ISmDCEHuZjpP1oMl/mbOC4m1ktz2w6uIWY4y9fe9Znzi4OkT9KNUlZ7cXFBGC1ZW8QS0coEs+V4C0X2e27pJDKXDq/ioxy9/LWauNNNaBvowwt3BXb687zsunDn7XWqu6KKekeVgZU8fzJdI6cRjK/p4=-----END CERTIFICATE-----</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="unit-test-buttons" class="text-center col-md-2">
+        <button class="btn btn-primary btn-sm mb-1 mr-1" type="button" style="width: 100%;"
+            onclick="testAll();">TEST ALL</button>
+    </div>
+</div>
+
+
+
+<script>
+    var isDialog = true;
+    var decodedData = "";
+    var units =
+    {
+        getVIDRandom: function () {
+            var innerCallback = function (res, error) {
+                callback(res, error, "getVIDRandom");
+            };
+
+            var options = { outputEncoding: $('#select-encoding').val() };
+            isDialog ? html5DialogApi.getVIDRandom(options, innerCallback) : html5Api.getVIDRandom(options, innerCallback);
+        },
+
+        getWNCertInfo: function () {
+            var innerCallback = function (res, error) {
+                callback(res, error, "getWNCertInfo");
+            };
+
+            isDialog ? html5DialogApi.getWNCertInfo(innerCallback) : html5Api.getWNCertInfo(innerCallback);
+        },
+
+        verifyVid: function () {
+            var innerCallback = function (res, error) {
+                callback(res, error, "verifyVid");
+            };
+
+            var idn = $('#textarea-idn').val();
+            isDialog ? html5DialogApi.verifyVid(idn, innerCallback) : html5Api.verifyVid(idn, innerCallback);
+        },
+
+        p1sign: function () {
+            var innerCallback = function (res, error) {
+                callback(res, error, "p1sign");
+            };
+
+            var message = $('#textarea-message').val();
+            var options = {
+                digestAlg: $('#select-digest-algorithm').val(),
+                charset: $('#select-charset').val(),
+                outputEncoding: $('#select-encoding').val(),
+            }
+            isDialog ? html5DialogApi.p1sign(message, options, innerCallback) : html5Api.p1sign(message, options, innerCallback);
+        },
+        p7sign: function () {
+            var innerCallback = function (res, error) {
+                if (error === undefined)
+                    $('#textarea-signature').val(res);
+
+                callback(res, error, "p7sign");
+            };
+
+            var message = $('#textarea-message').val();
+            var options = {
+                digestAlg: $('#select-digest-algorithm').val(),
+                charset: $('#select-charset').val(),
+                outputEncoding: $('#select-encoding').val(),
+            }
+
+            isDialog ? html5DialogApi.p7sign(message, options, innerCallback) : html5Api.p7sign(message, options, innerCallback);
+        },
+
+        signedAndEnvelop: function () {
+            var innerCallback = function (res, error) {
+                callback(res, error, "signedAndEnvelop");
+            };
+
+            var serverCert = $('#textarea-certificate').val();
+            var message = $('#textarea-message').val();
+            var options = {
+                digestAlg: $('#select-digest-algorithm').val(),
+                cipherAlg: $('select-cipher-algorithm').val() + $('select-block-mode').val(),
+                charset: $('#select-charset').val(),
+                outputEncoding: $('#select-encoding').val(),
+            }
+
+            isDialog ? html5DialogApi.signedAndEnvelop(serverCert, message, options, innerCallback) : html5Api.signedAndEnvelop(serverCert, message, options, innerCallback);
+        },
+
+        envelop: function () {
+            var innerCallback = function (res, error) {
+                callback(res, error, "envelop");
+            };
+
+            var serverCert = $('#textarea-certificate').val();
+            var message = $('#textarea-message').val();
+            var options = {
+                cipherAlg: $('select-cipher-algorithm').val() + $('select-block-mode').val(),
+                charset: $('#select-charset').val(),
+                outputEncoding: $('#select-encoding').val(),
+            }
+
+            html5Api.envelop(serverCert, message, options, innerCallback);
+        },
+
+        addSign: function () {
+            var innerCallback = function (res, error) {
+                callback(res, error, "addSign");
+            };
+
+            var signedData = $('#textarea-signature').val();
+            var options = {
+                digestAlg: $('#select-digest-algorithm').val(),
+                charset: $('#select-charset').val(),
+                outputEncoding: $('#select-encoding').val(),
+            }
+
+            isDialog ? html5DialogApi.addSign(signedData, options, innerCallback) : html5Api.addSign(signedData, options, innerCallback);
+        },
+
+
+        digest: function () {
+            var digestAlg = $('#select-digest-algorithm').val();
+            var message = $('#textarea-message').val();
+            var encode = $('#select-encoding').val();
+
+            var hash = html5Api.digest(digestAlg, message, encode);
+            $('#textarea-hash').val(hash);
+            callback(hash, undefined, "digest");
+        },
+
+        signDetached: function () {
+            var innerCallback = function (res, error) {
+                if (error === undefined)
+                    $("#textarea-detached-signature").val(res);
+
+                callback(res, error, "signDetached");
+            };
+
+            var encode = $('#select-encoding').val();
+
+            var message = "";
+            if (encode === "base64") {
+                message = webnpki.bin.decodeBase64($('#textarea-hash').val());
+            } else if (encode === "hex") {
+                message = webnpki.bin.decodeHex($('#textarea-hash').val());
+            }
+
+            var options = {
+                digestAlg: $('#select-digest-algorithm').val(),
+                charset: $('#select-charset').val(),
+                outputEncoding: $('#select-encoding').val(),
+                hashedContent: true
+            }
+
+            isDialog ? html5DialogApi.signDetached(message, options, innerCallback) : html5Api.signDetached(message, options, innerCallback);
+        },
+
+        addSignDetached: function () {
+            var innerCallback = function (res, error) {
+                callback(res, error, "addSignDetached");
+            };
+
+            var detachedSignedData = $('#textarea-detached-signature').val();
+            var encode = $('#select-encoding').val();
+
+            var message = "";
+            if (encode === "base64") {
+                message = webnpki.bin.decodeBase64($('#textarea-hash').val());
+            } else if (encode === "hex") {
+                message = webnpki.bin.decodeHex($('#textarea-hash').val());
+            }
+
+            var options = {
+                digestAlg: $('#select-digest-algorithm').val(),
+                charset: $('#select-charset').val(),
+                outputEncoding: $('#select-encoding').val(),
+                hashedContent: true
+            }
+
+            isDialog ? html5DialogApi.addSignDetached(detachedSignedData, message, options, innerCallback) : html5Api.addSignDetached(detachedSignedData, message, options, innerCallback);
+        },
+
+        getEncryptedPrivateKeyInfo: function () {
+            var innerCallback = function (res, error) {
+                callback(res, error, "getEncryptedPrivateKeyInfo");
+            };
+
+            isDialog ? html5DialogApi.getEncryptedPrivateKeyInfo(innerCallback) : html5Api.getEncryptedPrivateKeyInfo(innerCallback);
+        },
+
+        getEncryptedVidRandom: function () {
+            var innerCallback = function (res, error) {
+                callback(res, error, "getEncryptedVidRandom");
+            };
+
+            var serverCert = $('#textarea-certificate').val();
+            var options = {
+                outputEncoding: $('#select-encoding').val(),
+                paddingAlg: $('#select-paddingAlg').val()
+            }
+            isDialog ? html5DialogApi.getEncryptedVidRandom(serverCert, options, innerCallback) : html5Api.getEncryptedVidRandom(serverCert, options, innerCallback);
+        },
+
+
+        symmetricEncrypt: function () {
+            var symmetricAlg = $('#select-cipher-algorithm').val();
+            var mode = $('#select-block-mode').val();
+            var message = $('#textarea-message').val();
+            var options = {
+                key: $('#textarea-key').val(),
+                iv: $('#textarea-iv').val(),
+                outputEncoding: $('#select-encoding').val(),
+                charset: $('#select-charset').val(),
+            }
+
+            try {
+                var res = html5Api.symmetricEncrypt(symmetricAlg, mode, message, options);
+                $('#textarea-encrypted-message').val(res);
+                callback(res, undefined, 'symmetricEncrypt');
+            }
+            catch (e) {
+                callback(undefined, e.message, 'symmetricEncrypt');
+            }
+        },
+
+        symmetricDecrypt: function () {
+            var symmetricAlg = $('#select-cipher-algorithm').val();
+            var mode = $('#select-block-mode').val();
+            var cipherMessage = $('#textarea-encrypted-message').val();
+            var options = {
+                key: $('#textarea-key').val(),
+                iv: $('#textarea-iv').val(),
+                outputEncoding: $('#select-encoding').val(),
+                charset: $('#select-charset').val(),
+            }
+
+            try {
+                var res = html5Api.symmetricDecrypt(symmetricAlg, mode, cipherMessage, options);
+                callback(res, undefined, 'symmetricDecrypt');
+            }
+            catch (e) {
+                callback(undefined, e.message, 'symmetricDecrypt');
+            }
+        },
+
+        getEncryptedKey: function () {
+            var serverCert = $('#textarea-certificate').val();
+            var encode = $('#select-encoding').val();
+
+            try {
+                var res = html5Api.getEncryptedKey(serverCert, encode);
+                callback(res, undefined, 'getEncryptedKey');
+            }
+            catch (e) {
+                callback(undefined, e.message, 'getEncryptedKey');
+            }
+        },
+
+        rsaEncrypt: function () {
+            var key = $('#textarea-certificate').val();
+            var message = $('#textarea-message').val();
+            var paddingAlg = $('#select-rsa-algorithm').val();
+            var encode = $('#select-encoding').val();
+
+            try {
+                var res = html5Api.rsaEncrypt(key, message, paddingAlg, encode);
+                callback(res, undefined, 'rsaEncrypt');
+            }
+            catch (e) {
+                callback(undefined, e.message, 'rsaEncrypt');
+            }
+        },
+
+        decodeString: function () {
+            var message = $('#textarea-message').val();
+            var charset = $('#select-charset').val();
+
+            try {
+                var res = html5Api.decodeString(message, charset);
+                decodedData = res;
+                callback(res, undefined, 'decodeString');
+            }
+            catch (e) {
+                callback(undefined, e.message, 'decodeString');
+            }
+        },
+
+        encodeString: function () {
+            var charset = $('#select-charset').val();
+
+            try {
+                var res = html5Api.encodeString(decodedData, charset);
+                callback(res, undefined, 'encodeString');
+            }
+            catch (e) {
+                callback(undefined, e.message, 'encodeString');
+            }
+        },
+
+        encodeHex: function () {
+            var charset = $('#select-charset').val();
+
+            try {
+                var res = html5Api.encodeHex(decodedData, charset);
+                $('#textarea-hex-encoded-message').val(res);
+                callback(res, undefined, 'encodeHex');
+            }
+            catch (e) {
+                callback(undefined, e.message, 'encodeHex');
+            }
+        },
+
+        decodeHex: function () {
+            var hexEncoded = $('#textarea-hex-encoded-message').val();
+
+            try {
+                var res = html5Api.decodeHex(hexEncoded);
+                callback(res, undefined, 'decodeHex');
+            }
+            catch (e) {
+                callback(undefined, e.message, 'decodeHex');
+            }
+        },
+
+        encodeBase64: function () {
+            var charset = $('#select-charset').val();
+
+            try {
+                var res = html5Api.encodeBase64(decodedData, charset);
+                $('#textarea-base64-encoded-message').val(res);
+                callback(res, undefined, 'encodeBase64');
+            }
+            catch (e) {
+                callback(undefined, e.message, 'encodeBase64');
+            }
+        },
+
+        decodeBase64: function () {
+            var base64Encoded = $('#textarea-base64-encoded-message').val();
+            try {
+                var res = html5Api.decodeBase64(base64Encoded);
+                callback(res, undefined, 'decodeBase64');
+            }
+            catch (e) {
+                callback(undefined, e.message, 'decodeBase64');
+            }
+        }
+    };
+
+
+    (function () {
+        for (var key in units) {
+            var btn = $(document.createElement("button"));
+            btn.addClass("btn btn-secondary btn-sm mb-1 mr-1");
+            btn.attr("type", "button");
+            btn.attr("style", "width: 100%");
+            // popver settings
+            btn.attr("data-toggle", "popover");
+            btn.attr("title", key);
+
+            btn.attr("id", key);
+            btn.html(key);
+            btn.click(function () {
+                isDialog = true;
+                isTestAll = false;
+                eval("units." + this.id + "(callback)");
+            })
+
+            $('#unit-test-buttons').append(btn);
+        }
+    })();
+
+
+    var funcs = Object.values(units);
+    var i = 0;
+    var isTestAll = false;
+    function testAll() {
+        if (i === funcs.length) {
+            isDialog = true;
+            isTestAll = false;
+            i = 0;
+            return;
+        }
+
+        if (i === 1)
+            isDialog = false;
+
+        isTestAll = true;
+        funcs[i]();
+    }
+
+    function callback(res, error, id) {
+        var btn = $('#' + id);
+        btn.removeClass("btn-secondary");
+        btn.removeClass("btn-success");
+        btn.removeClass("btn-danger");
+        btn.popover('dispose');
+
+        if (error !== undefined) {
+            btn.addClass("btn-danger");
+
+            btn.popover({
+                delay: { "hide": 100 },
+                content: error,
+                trigger: 'hover',
+                template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-header text-white bg-danger"></h3><div class="popover-body text-danger"></div></div>'
+            });
+        } else {
+            btn.addClass("btn-success");
+            var str = JSON.stringify(res);
+
+            btn.popover({
+                delay: { "hide": 100 },
+                content: str,
+                trigger: 'hover',
+                template: '<div class="popovers w-25 h-50" role="tooltip"><div class="arrow"></div><h3 class="popover-header text-white bg-success"></h3><div class="popover-body text-primary overflow-auto bg-light text-break mh-100"></div></div>'
+            })
+        }
+
+        btn.popover('update');
+
+        KICA_DIALOG.closeSelectCertificateDialog();
+
+        if (isTestAll) {
+            i++;
+            testAll();
+        }
+    }
+
+</script>
